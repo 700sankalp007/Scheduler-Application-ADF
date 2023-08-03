@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24"
+                id="GeneralSetupBTF_GeneralSetupBTF_CreateInsertPageDef1" Package="TaskFlows.generalSetup"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="ReportSetupDetailEOVO1" RangeSize="25" DataControl="GenericSchedulerAMDataControl"
+              id="ReportSetupDetailEOVO1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="ReportSetupDetailEOVO1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

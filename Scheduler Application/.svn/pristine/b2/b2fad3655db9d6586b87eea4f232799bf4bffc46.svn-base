@@ -1,0 +1,20 @@
+SET DEFINE OFF;
+--SQL Statement which produced this data:
+--
+--  SELECT 
+--     ROWID, TERM_ID, DESCRIPTION, NAME
+--  FROM C##ZAMIL_TST.CB_PAYMENT_TERM_MASTER
+--
+Insert into CB_PAYMENT_TERM_MASTER
+   (TERM_ID, DESCRIPTION, NAME)
+ Values
+   ('4', 'Payment of the transaction balance is due within 30 days of the transaction date.', '30 Net');
+Insert into CB_PAYMENT_TERM_MASTER
+   (TERM_ID, DESCRIPTION, NAME)
+ Values
+   ('5', 'Payment of the transaction balance is due on the transaction date.', 'IMMEDIATE');
+Insert into CB_PAYMENT_TERM_MASTER
+   (TERM_ID, DESCRIPTION, NAME)
+ Values
+   ('6', 'Payment term for HES balance forward billing.', 'ORA_HES');
+COMMIT;

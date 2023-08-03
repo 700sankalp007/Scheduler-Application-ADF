@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SchedulerSetupEOVO"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  AccessMode="DEFAULT">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Variable
+    Name="p_zi_app_name"
+    Kind="where"
+    Type="java.lang.String">
+     <TransientExpression
+     Name="ExpressionScript">adf.context.current.pageFlowScope.appName</TransientExpression>
+</Variable>
+  <ViewAccessor
+    Name="SchedulerTypeLovVO1"
+    ViewObjectName="sc.common.model.queries.lov.SchedulerTypeLovVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="YesNoLovVO1"
+    ViewObjectName="sc.common.model.queries.lov.YesNoLovVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="HourLovVO1"
+    ViewObjectName="sc.common.model.queries.lov.HourLovVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="MinuteSecondLovVO1"
+    ViewObjectName="sc.common.model.queries.lov.MinuteSecondLovVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="SchedulerTypeLovVO2"
+    ViewObjectName="sc.common.model.queries.lov.SchedulerTypeLovVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="HourLovVO2"
+    ViewObjectName="sc.common.model.queries.lov.HourLovVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="MinuteSecondLovVO2"
+    ViewObjectName="sc.common.model.queries.lov.MinuteSecondLovVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_SchedulerType"
+    ListVOName="SchedulerTypeLovVO1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SchedulerType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Code"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Hour"
+    ListVOName="HourLovVO1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Hour"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Code"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Minute"
+    ListVOName="MinuteSecondLovVO1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Minute"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Code"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Second"
+    ListVOName="MinuteSecondLovVO1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Second"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Code"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_IsParameterized"
+    ListVOName="YesNoLovVO1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="IsParameterized"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Code"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <SQLQuery><![CDATA[SELECT SchedulerSetupEO.SCHEDULER_ID,         
+       SchedulerSetupEO.SERVICE_NAME,         
+       SchedulerSetupEO.SCHEDULER_TYPE,         
+       SchedulerSetupEO.HOUR,         
+       SchedulerSetupEO.MINUTE,         
+       SchedulerSetupEO.SECOND,         
+       SchedulerSetupEO.SERVICE_TYPE,         
+       SchedulerSetupEO.CREATED_BY,         
+       SchedulerSetupEO.UPDATED_BY,         
+       SchedulerSetupEO.UPDATION_DATE,         
+       SchedulerSetupEO.CREATION_DATE,         
+       SchedulerSetupEO.STATUS,         
+       SchedulerSetupEO.IS_PARAMETERIZED,         
+       SchedulerSetupEO.CALL_TYPE,         
+       SchedulerSetupEO.SCHEDULE_FLAG,       
+       scdate.SCHEDULER_DATE as LAST_RUN_DATE,   
+       SchedulerSetupEO.APP_NAME, 
+       (SELECT REPORT_DATA_TABLE FROM XX_SCH_REPORT_SETUP_HDR WHERE SCHEDULER_ID = SchedulerSetupEO.SCHEDULER_ID AND ROWNUM=1) REPORT_DATA_TABLE 
+FROM  XX_SCH_SCHEDULER_SETUP SchedulerSetupEO,XX_SCH_SCHEDULER_DATE scdate where SchedulerSetupEO.SCHEDULER_ID=scdate.SCHEDULER_ID  
+and SchedulerSetupEO.APP_NAME=:p_zi_app_name]]></SQLQuery>
+  <EntityUsage
+    Name="SchedulerSetupEO"
+    Entity="sc.common.model.entities.SchedulerSetupEO"/>
+  <ViewAttribute
+    Name="SchedulerId"
+    PrecisionRule="true"
+    AliasName="SCHEDULER_ID"
+    EntityAttrName="SchedulerId"
+    EntityUsage="SchedulerSetupEO"/>
+  <ViewAttribute
+    Name="ServiceName"
+    PrecisionRule="true"
+    AliasName="SERVICE_NAME"
+    EntityAttrName="ServiceName"
+    EntityUsage="SchedulerSetupEO">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="SERVICE_NAME"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SchedulerType"
+    PrecisionRule="true"
+    AliasName="SCHEDULER_TYPE"
+    EntityAttrName="SchedulerType"
+    EntityUsage="SchedulerSetupEO"
+    LOVName="LOV_SchedulerType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <LABEL
+          ResId="SCHEDULER_TYPE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Hour"
+    PrecisionRule="true"
+    EntityAttrName="Hour"
+    EntityUsage="SchedulerSetupEO"
+    AliasName="HOUR"
+    LOVName="LOV_Hour">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Minute"
+    PrecisionRule="true"
+    AliasName="MINUTE"
+    EntityAttrName="Minute"
+    EntityUsage="SchedulerSetupEO"
+    LOVName="LOV_Minute">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Second"
+    PrecisionRule="true"
+    AliasName="SECOND"
+    EntityAttrName="Second"
+    EntityUsage="SchedulerSetupEO"
+    LOVName="LOV_Second">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ServiceType"
+    PrecisionRule="true"
+    AliasName="SERVICE_TYPE"
+    EntityAttrName="ServiceType"
+    EntityUsage="SchedulerSetupEO">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="SERVICE_TYPE"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    AliasName="CREATED_BY"
+    EntityAttrName="CreatedBy"
+    EntityUsage="SchedulerSetupEO"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    AliasName="UPDATED_BY"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="SchedulerSetupEO"/>
+  <ViewAttribute
+    Name="UpdationDate"
+    PrecisionRule="true"
+    AliasName="UPDATION_DATE"
+    EntityAttrName="UpdationDate"
+    EntityUsage="SchedulerSetupEO"/>
+  <ViewAttribute
+    Name="CreationDate"
+    PrecisionRule="true"
+    AliasName="CREATION_DATE"
+    EntityAttrName="CreationDate"
+    EntityUsage="SchedulerSetupEO"/>
+  <ViewAttribute
+    Name="Status"
+    PrecisionRule="true"
+    AliasName="STATUS"
+    EntityAttrName="Status"
+    EntityUsage="SchedulerSetupEO"/>
+  <ViewAttribute
+    Name="IsParameterized"
+    PrecisionRule="true"
+    AliasName="IS_PARAMETERIZED"
+    EntityAttrName="IsParameterized"
+    EntityUsage="SchedulerSetupEO"
+    LOVName="LOV_IsParameterized">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <LABEL
+          ResId="IS_PARAMETERIZED"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CallType"
+    PrecisionRule="true"
+    AliasName="CALL_TYPE"
+    EntityAttrName="CallType"
+    EntityUsage="SchedulerSetupEO"/>
+  <ViewAttribute
+    Name="ScheduleFlag"
+    PrecisionRule="true"
+    AliasName="SCHEDULE_FLAG"
+    EntityAttrName="ScheduleFlag"
+    EntityUsage="SchedulerSetupEO"/>
+  <ViewAttribute
+    Name="LastRunDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    AliasName="LAST_RUN_DATE"
+    Expression="LAST_RUN_DATE"
+    SQLType="DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="sc.common.model.queries.SchedulerSetupEOVO.LastRunDate_LABEL"/>
+        <FMT_FORMAT
+          ResId="sc.common.model.queries.SchedulerSetupEOVO.LastRunDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="sc.common.model.queries.SchedulerSetupEOVO.LastRunDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="AppName"
+    PrecisionRule="true"
+    EntityAttrName="AppName"
+    EntityUsage="SchedulerSetupEO"
+    AliasName="APP_NAME"/>
+  <ViewAttribute
+    Name="ReportDataTable"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="REPORT_DATA_TABLE"
+    Expression="REPORT_DATA_TABLE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="ReportRunHistoryEOVO"
+    ViewLink="sc.common.model.queries.viewLink.SchedulerSetupToRunHistoryVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ReportSetupHeaderEOVo"
+    ViewLink="sc.common.model.queries.viewLink.SchedulerSetupToReportHeaderVL"
+    Type="sc.common.model.queries.ReportSetupHeaderEOVORowImpl"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="SchedulerDateEOVO"
+    ViewLink="sc.common.model.queries.viewLink.SchedulerSetupToSchedulerDateVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="sc.common.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

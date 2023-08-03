@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SchedulerSetupToRunHistoryVL"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="sc.common.model.queries.viewLink.SchedulerSetupToRunHistoryVL_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="SchedulerSetupEOVO"
+    Cardinality="1"
+    Source="true"
+    Owner="sc.common.model.queries.SchedulerSetupEOVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="SchedulerSetupEOVO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sc.common.model.queries.SchedulerSetupEOVO.SchedulerId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="ReportRunHistoryEOVO"
+    Cardinality="-1"
+    Owner="sc.common.model.queries.ReportRunHistoryEOVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="ReportRunHistoryEOVO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="sc.common.model.queries.ReportRunHistoryEOVO.SchedulerId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="sc.common.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="GeneralSetupPGPageDef"
+                Package="Pages.generalSetup">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="sc.common.view.pageDefs.GenricPageTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <taskFlow id="GeneralSetupBTF1" taskFlowId="/WEB-INF/TaskFlows/generalSetup/GeneralSetupBTF.xml#GeneralSetupBTF"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding">
+      <parameters>
+        <parameter id="appName" value="#{param.appName}"/>
+      </parameters>
+    </taskFlow>
+  </executables>
+  <bindings/>
+</pageDefinition>

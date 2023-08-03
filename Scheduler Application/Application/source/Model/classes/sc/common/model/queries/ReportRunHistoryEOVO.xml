@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ReportRunHistoryEOVO"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="StatusListLovVO1"
+    ViewObjectName="sc.common.model.queries.lov.StatusListLovVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ServiceNameListLovVO1"
+    ViewObjectName="sc.common.model.queries.lov.ServiceNameListLovVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Status"
+    ListVOName="StatusListLovVO1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Status"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Code"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ServiceType"
+    ListVOName="ServiceNameListLovVO1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ServiceType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ServiceType"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ServiceName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <SQLQuery><![CDATA[SELECT ReportRunHistoryEO.ID,            
+       ReportRunHistoryEO.SERVICE_TYPE,            
+       ReportRunHistoryEO.STATUS,            
+       ReportRunHistoryEO.RECORD_PROCESSED,            
+       ReportRunHistoryEO.START_TIME,            
+       ReportRunHistoryEO.END_TME,        
+       ReportRunHistoryEO.SCHEDULER_ID,      
+       ReportRunHistoryEO.RUN_TYPE      
+ 
+FROM  XX_SCH_REPORT_RUN_HIS ReportRunHistoryEO  
+ 
+ORDER BY ID DESC]]></SQLQuery>
+  <EntityUsage
+    Name="ReportRunHistoryEO"
+    Entity="sc.common.model.entities.ReportRunHistoryEO"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="ReportRunHistoryEO"
+    AliasName="ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="PROCESS_NUMBER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ServiceType"
+    PrecisionRule="true"
+    EntityAttrName="ServiceType"
+    EntityUsage="ReportRunHistoryEO"
+    AliasName="SERVICE_TYPE"
+    LOVName="LOV_ServiceType">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="SERVICE_TYPE"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Status"
+    PrecisionRule="true"
+    EntityAttrName="Status"
+    EntityUsage="ReportRunHistoryEO"
+    AliasName="STATUS"
+    LOVName="LOV_Status">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RecordProcessed"
+    PrecisionRule="true"
+    EntityAttrName="RecordProcessed"
+    EntityUsage="ReportRunHistoryEO"
+    AliasName="RECORD_PROCESSED">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="RECORD_PROCESSED"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="StartTime"
+    PrecisionRule="true"
+    EntityAttrName="StartTime"
+    EntityUsage="ReportRunHistoryEO"
+    AliasName="START_TIME">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="sc.common.model.queries.ReportRunHistoryEOVO.StartTime_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="sc.common.model.queries.ReportRunHistoryEOVO.StartTime_FMT_FORMAT"/>
+        <LABEL
+          ResId="START_TIME"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EndTme"
+    PrecisionRule="true"
+    EntityAttrName="EndTme"
+    EntityUsage="ReportRunHistoryEO"
+    AliasName="END_TME">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="sc.common.model.queries.ReportRunHistoryEOVO.EndTme_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="sc.common.model.queries.ReportRunHistoryEOVO.EndTme_FMT_FORMAT"/>
+        <LABEL
+          ResId="END_TIME"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SchedulerId"
+    PrecisionRule="true"
+    EntityAttrName="SchedulerId"
+    EntityUsage="ReportRunHistoryEO"
+    AliasName="SCHEDULER_ID"/>
+  <ViewAttribute
+    Name="RunType"
+    PrecisionRule="true"
+    EntityAttrName="RunType"
+    EntityUsage="ReportRunHistoryEO"
+    AliasName="RUN_TYPE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="RUN_TYPE"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="ExceptionLogVO"
+    ViewLink="sc.common.model.queries.viewLink.ReportRunHistToExceptionLogVL"
+    Type="oracle.jbo.server.ViewRowImpl"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="sc.common.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

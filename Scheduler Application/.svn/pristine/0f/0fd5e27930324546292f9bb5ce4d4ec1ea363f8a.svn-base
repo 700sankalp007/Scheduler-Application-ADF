@@ -1,0 +1,14 @@
+#Thu May 09 18:56:04 IST 2019
+oracle.commons=../../../../../softwares/jdev12213/oracle_common/
+install.dir=../../../../../softwares/jdev12213/
+oracle.jdeveloper.ant.library=D\:\\softwares\\jdev12213\\jdeveloper\\jdev\\/lib/ant-jdeveloper.jar
+oracle.home=../../../../../softwares/jdev12213/jdeveloper/
+oracle.jdeveloper.workspace.path=D\:\\projects\\Fife\\apps\\outboundIntegration\\GenericSchedulerApplication\\GenericSchedulerApplication.jws
+oracle.jdeveloper.deploy.profile.name=*
+oracle.jdeveloper.deploy.dir=D\:\\projects\\Fife\\apps\\outboundIntegration\\GenericSchedulerApplication\\deploy
+oracle.jdeveloper.ojdeploy.path=D\:\\softwares\\jdev12213\\jdeveloper\\jdev\\bin\\ojdeploy.exe
+oracle.jdeveloper.deploy.outputfile=D\:\\projects\\Fife\\apps\\outboundIntegration\\GenericSchedulerApplication\\deploy\\${profile.name}
+utility.connectionmanager=ViewController\\src\\sc\\common\\view\\util\\ConnectionManager.java
+jws.path=GenericSchedulerApplication.jws
+deployConnName=BCCTestDBDS
+localConnName=BCCTestDBDS

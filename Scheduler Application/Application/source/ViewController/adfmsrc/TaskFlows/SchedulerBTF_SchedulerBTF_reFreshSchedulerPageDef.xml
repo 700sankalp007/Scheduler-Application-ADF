@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24"
+                id="SchedulerBTF_SchedulerBTF_reFreshSchedulerPageDef" Package="TaskFlows" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SchedulerSetupEOVO1" RangeSize="10" DataControl="GenericSchedulerAMDataControl"
+              id="SchedulerSetupEOVO1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="SchedulerSetupEOVO1Iterator" id="ExecuteScheduler"
+            InstanceName="GenericSchedulerAMDataControl.SchedulerSetupEOVO1" DataControl="GenericSchedulerAMDataControl"
+            RequiresUpdateModel="true" Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

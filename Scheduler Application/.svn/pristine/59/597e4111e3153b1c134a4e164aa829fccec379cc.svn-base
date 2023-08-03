@@ -1,0 +1,104 @@
+SET DEFINE OFF;
+--SQL Statement which produced this data:
+--
+--  SELECT 
+--     ROWID, UNIT_OF_MEASURE, UOM_CODE
+--  FROM C##ZAMIL_TST.CB_OUM_MASTER
+--
+Insert into CB_OUM_MASTER
+   (UNIT_OF_MEASURE, UOM_CODE)
+ Values
+   ('Amount', 'AMT');
+Insert into CB_OUM_MASTER
+   (UNIT_OF_MEASURE, UOM_CODE)
+ Values
+   ('Can', 'CAN');
+Insert into CB_OUM_MASTER
+   (UNIT_OF_MEASURE, UOM_CODE)
+ Values
+   ('Daily', 'DAY');
+Insert into CB_OUM_MASTER
+   (UNIT_OF_MEASURE, UOM_CODE)
+ Values
+   ('Day', 'DY');
+Insert into CB_OUM_MASTER
+   (UNIT_OF_MEASURE, UOM_CODE)
+ Values
+   ('Each', 'EA');
+Insert into CB_OUM_MASTER
+   (UNIT_OF_MEASURE, UOM_CODE)
+ Values
+   ('Foot', 'FT');
+Insert into CB_OUM_MASTER
+   (UNIT_OF_MEASURE, UOM_CODE)
+ Values
+   ('Gallon', 'GAL');
+Insert into CB_OUM_MASTER
+   (UNIT_OF_MEASURE, UOM_CODE)
+ Values
+   ('Hour', 'HR');
+Insert into CB_OUM_MASTER
+   (UNIT_OF_MEASURE, UOM_CODE)
+ Values
+   ('Kilogram', 'KG');
+Insert into CB_OUM_MASTER
+   (UNIT_OF_MEASURE, UOM_CODE)
+ Values
+   ('Pound', 'LB');
+Insert into CB_OUM_MASTER
+   (UNIT_OF_MEASURE, UOM_CODE)
+ Values
+   ('Liter', 'LT');
+Insert into CB_OUM_MASTER
+   (UNIT_OF_MEASURE, UOM_CODE)
+ Values
+   ('Minutes', 'MIN');
+Insert into CB_OUM_MASTER
+   (UNIT_OF_MEASURE, UOM_CODE)
+ Values
+   ('Milli Liters', 'ML');
+Insert into CB_OUM_MASTER
+   (UNIT_OF_MEASURE, UOM_CODE)
+ Values
+   ('Millimeter', 'MM');
+Insert into CB_OUM_MASTER
+   (UNIT_OF_MEASURE, UOM_CODE)
+ Values
+   ('Mnth', 'MT');
+Insert into CB_OUM_MASTER
+   (UNIT_OF_MEASURE, UOM_CODE)
+ Values
+   ('Meter', 'MTR');
+Insert into CB_OUM_MASTER
+   (UNIT_OF_MEASURE, UOM_CODE)
+ Values
+   ('RPM', 'RPM');
+Insert into CB_OUM_MASTER
+   (UNIT_OF_MEASURE, UOM_CODE)
+ Values
+   ('Square Centimeter', 'SQC');
+Insert into CB_OUM_MASTER
+   (UNIT_OF_MEASURE, UOM_CODE)
+ Values
+   ('Square Feet', 'SQF');
+Insert into CB_OUM_MASTER
+   (UNIT_OF_MEASURE, UOM_CODE)
+ Values
+   ('Square Meter', 'SQM');
+Insert into CB_OUM_MASTER
+   (UNIT_OF_MEASURE, UOM_CODE)
+ Values
+   ('Watts', 'W');
+Insert into CB_OUM_MASTER
+   (UNIT_OF_MEASURE, UOM_CODE)
+ Values
+   ('W', 'Wat');
+Insert into CB_OUM_MASTER
+   (UNIT_OF_MEASURE, UOM_CODE)
+ Values
+   ('Year', 'YR');
+Insert into CB_OUM_MASTER
+   (UNIT_OF_MEASURE, UOM_CODE)
+ Values
+   ('db', 'db');
+COMMIT;

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="SchedulerPGPageDef"
+                Package="Pages">
+  <parameters/>
+  <executables>
+    
+    <taskFlow id="SchedulerBTF1" taskFlowId="/WEB-INF/TaskFlows/SchedulerBTF.xml#SchedulerBTF" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding">
+      <parameters>
+        <parameter id="appName" value="#{param.appName}"/>
+        <parameter id="custom" value="#{param.custom}"/>
+        <parameter id="jwt" value="#{param.jwt}"/>
+      </parameters>
+    </taskFlow>
+    <page path="sc.common.view.pageDefs.GenricPageTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+  </executables>
+  <bindings/>
+</pageDefinition>

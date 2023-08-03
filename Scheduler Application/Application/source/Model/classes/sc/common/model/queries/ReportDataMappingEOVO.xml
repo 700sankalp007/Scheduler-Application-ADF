@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ReportDataMappingEOVO"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  RowClass="sc.common.model.queries.ReportDataMappingEOVORowImpl"
+  RowInterface="sc.common.model.queries.common.ReportDataMappingEOVORow">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="SequenceListLovVO1"
+    ViewObjectName="sc.common.model.queries.lov.SequenceListLovVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="YesNoLovVO1"
+    ViewObjectName="sc.common.model.queries.lov.YesNoLovVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ColumnNameLovVO1"
+    ViewObjectName="sc.common.model.queries.lov.ColumnNameLovVO"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="TABLE_P_NAME">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[TableName]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ListBinding
+    Name="LOV_DefaultValue"
+    ListVOName="SequenceListLovVO1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DefaultValue"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="SequenceName"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="SequenceName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="SequenceListLovVOCriteria"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PrimaryFlag"
+    ListVOName="YesNoLovVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PrimaryFlag"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Code"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_IsSeq"
+    ListVOName="YesNoLovVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="IsSeq"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Code"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TableColName"
+    ListVOName="ColumnNameLovVO1"
+    NullValueFlag="none"
+    MRUCount="0"
+    ComboRowCountHint="10">
+    <AttrArray Name="AttrNames">
+      <Item Value="TableColName"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="ColumnDataType"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ColumnName"/>
+      <Item Value="DataType"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ColumnName"/>
+      <Item Value="DataType"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="ColumnNameLovVOCriteria"/>
+  </ListBinding>
+  <SQLQuery><![CDATA[SELECT ReportDataMappingEO.MAP_ID,            
+       ReportDataMappingEO.REPORT_COL_NAME,            
+       ReportDataMappingEO.REPORT_SEQ_NAME,            
+       ReportDataMappingEO.TABLE_COL_NAME,            
+       ReportDataMappingEO.DEFAULT_VALUE,            
+       ReportDataMappingEO.REPORT_HEADER_ID,            
+       ReportDataMappingEO.PRIMARY_FLAG,        
+       ReportDataMappingEO.DATE_FORMAT,        
+       ReportDataMappingEO.IS_SEQ,  
+       ReportDataMappingEO.COLUMN_DATA_TYPE  
+       FROM  XX_SCH_REPORT_DATA_MAPPING ReportDataMappingEO ORDER BY  ReportDataMappingEO.REPORT_SEQ_NAME]]></SQLQuery>
+  <EntityUsage
+    Name="ReportDataMappingEO"
+    Entity="sc.common.model.entities.ReportDataMappingEO"/>
+  <ViewAttribute
+    Name="MapId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="MapId"
+    EntityUsage="ReportDataMappingEO"
+    AliasName="MAP_ID"/>
+  <ViewAttribute
+    Name="ReportColName"
+    PrecisionRule="true"
+    EntityAttrName="ReportColName"
+    EntityUsage="ReportDataMappingEO"
+    AliasName="REPORT_COL_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="REPORT_COLUMN_NAME"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ReportSeqName"
+    PrecisionRule="true"
+    EntityAttrName="ReportSeqName"
+    EntityUsage="ReportDataMappingEO"
+    AliasName="REPORT_SEQ_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="REPORT_COLUMN_SEQUENCE"/>
+        <DISPLAYWIDTH
+          Value="10"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TableColName"
+    PrecisionRule="true"
+    EntityAttrName="TableColName"
+    EntityUsage="ReportDataMappingEO"
+    AliasName="TABLE_COL_NAME"
+    LOVName="LOV_TableColName">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="TABLE_COLUMN_NAME"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DefaultValue"
+    PrecisionRule="true"
+    EntityAttrName="DefaultValue"
+    EntityUsage="ReportDataMappingEO"
+    AliasName="DEFAULT_VALUE"
+    LOVName="LOV_DefaultValue">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+        <LABEL
+          ResId="DEFAULT_VALUE"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ReportHeaderId"
+    PrecisionRule="true"
+    EntityAttrName="ReportHeaderId"
+    EntityUsage="ReportDataMappingEO"
+    AliasName="REPORT_HEADER_ID"/>
+  <ViewAttribute
+    Name="PrimaryFlag"
+    PrecisionRule="true"
+    EntityAttrName="PrimaryFlag"
+    EntityUsage="ReportDataMappingEO"
+    AliasName="PRIMARY_FLAG"
+    LOVName="LOV_PrimaryFlag"
+    DefaultValue="N">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="PRIMARY_FLAG"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DateFormat"
+    PrecisionRule="true"
+    EntityAttrName="DateFormat"
+    EntityUsage="ReportDataMappingEO"
+    AliasName="DATE_FORMAT">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="DATE_FORMAT"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="IsSeq"
+    PrecisionRule="true"
+    EntityAttrName="IsSeq"
+    EntityUsage="ReportDataMappingEO"
+    AliasName="IS_SEQ"
+    LOVName="LOV_IsSeq"
+    DefaultValue="N">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="IS_SEQUENCE"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ColumnDataType"
+    PrecisionRule="true"
+    EntityAttrName="ColumnDataType"
+    EntityUsage="ReportDataMappingEO"
+    AliasName="COLUMN_DATA_TYPE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="COLUMN_DATA_TYPE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TableName"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="sc.common.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

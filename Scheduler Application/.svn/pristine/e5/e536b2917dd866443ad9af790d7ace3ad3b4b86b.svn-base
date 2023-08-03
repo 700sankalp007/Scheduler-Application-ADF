@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="JWTAuthenticationBTF">
+    <default-activity>setFusionEndpoint</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__1">
+      <managed-bean-name>FusionSetupBean</managed-bean-name>
+      <managed-bean-class>sc.common.view.util.FusionSetupBean</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
+    <method-call id="setFusionEndpoint">
+      <method>#{backingBeanScope.FusionSetupBean.setFusionEndpoint}</method>
+      <outcome>
+        <to-string/>
+      </outcome>
+    </method-call>
+    <task-flow-call id="validateUserTokenTF">
+      <task-flow-reference>
+        <document>/WEB-INF/validateUserTokenTF.xml</document>
+        <id>validateUserTokenTF</id>
+      </task-flow-reference>
+      <input-parameter id="__6">
+        <name>jwt</name>
+        <value>#{sessionScope.jwt}</value>
+      </input-parameter>
+      <input-parameter id="__7">
+        <name>fusionJWTTokenEndpoint</name>
+        <value>#{pageFlowScope.JwtEndPoint}</value>
+      </input-parameter>
+      <return-value id="__8">
+        <name>jwtUserContext</name>
+        <value>#{sessionScope.UserBean}</value>
+      </return-value>
+    </task-flow-call>
+    <method-call id="setUserDetails">
+      <method>#{backingBeanScope.FusionSetupBean.setUserDetails}</method>
+      <outcome>
+        <to-string/>
+      </outcome>
+    </method-call>
+    <task-flow-return id="taskFlowReturn1">
+      <outcome>
+        <name>taskFlowReturn1</name>
+      </outcome>
+    </task-flow-return>
+    <view id="errorFG">
+      <page>/fragments/errorFG.jsff</page>
+    </view>
+    <control-flow-rule id="__2">
+      <from-activity-id>setFusionEndpoint</from-activity-id>
+      <control-flow-case id="__3">
+        <from-outcome>validateToken</from-outcome>
+        <to-activity-id>validateUserTokenTF</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__13">
+        <from-outcome>error</from-outcome>
+        <to-activity-id>errorFG</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>validateUserTokenTF</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>goNext</from-outcome>
+        <to-activity-id>setUserDetails</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__14">
+        <from-outcome>error</from-outcome>
+        <to-activity-id>errorFG</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__11">
+      <from-activity-id>setUserDetails</from-activity-id>
+      <control-flow-case id="__12">
+        <from-outcome>validToken</from-outcome>
+        <to-activity-id>taskFlowReturn1</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__15">
+        <from-outcome>error</from-outcome>
+        <to-activity-id>errorFG</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

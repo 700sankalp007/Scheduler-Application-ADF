@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="SchedulerBTF">
+    <default-activity>JWTAuthenticationBTF</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <input-parameter-definition id="__5">
+      <name>appName</name>
+      <value>#{pageFlowScope.appName}</value>
+      <class>java.lang.String</class>
+      <required/>
+    </input-parameter-definition>
+    <input-parameter-definition id="__7">
+      <name>custom</name>
+      <value>#{pageFlowScope.custom}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <input-parameter-definition id="__11">
+      <name>jwt</name>
+      <value>#{sessionScope.jwt}</value>
+    </input-parameter-definition>
+    <managed-bean id="__1">
+      <managed-bean-name>GenericSchedulerBean</managed-bean-name>
+      <managed-bean-class>sc.common.view.backing.GenericSchedulerBean</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+    </managed-bean>
+    <view id="SchedulerFrag">
+      <page>/fragments/SchedulerFrag.jsff</page>
+    </view>
+    <method-call id="reFreshScheduler">
+      <method>#{backingBeanScope.GenericSchedulerBean.reFreshScheduler}</method>
+      <outcome>
+        <to-string/>
+      </outcome>
+    </method-call>
+    <method-call id="reFreshRunHis">
+      <method>#{backingBeanScope.GenericSchedulerBean.reFreshRunHis}</method>
+       <outcome>
+        <to-string/>
+      </outcome>
+    </method-call>
+    <task-flow-call id="GeneralSetupBTF">
+      <task-flow-reference>
+        <document>/WEB-INF/TaskFlows/generalSetup/GeneralSetupBTF.xml</document>
+        <id>GeneralSetupBTF</id>
+      </task-flow-reference>
+      <input-parameter id="__8">
+        <name>appName</name>
+        <value>#{pageFlowScope.appName}</value>
+      </input-parameter>
+    </task-flow-call>
+    <task-flow-call id="JWTAuthenticationBTF">
+      <?audit suppress oracle.adfdt.controller.adfc.source.audit.TaskFlowCallPageTypesNotHomogeneous?>
+      <task-flow-reference>
+        <document>/WEB-INF/TaskFlows/JWTAuthenticationBTF.xml</document>
+        <id>JWTAuthenticationBTF</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <control-flow-rule id="__2">
+      <from-activity-id>SchedulerFrag</from-activity-id>
+      <control-flow-case id="__3">
+        <from-outcome>referesh</from-outcome>
+        <to-activity-id>reFreshScheduler</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__4">
+        <from-outcome>refresh2</from-outcome>
+        <to-activity-id>reFreshRunHis</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__6">
+        <from-outcome>GoToSetup</from-outcome>
+        <to-activity-id>GeneralSetupBTF</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__9">
+      <from-activity-id>JWTAuthenticationBTF</from-activity-id>
+      <control-flow-case id="__10">
+        <from-outcome>taskFlowReturn1</from-outcome>
+        <to-activity-id>SchedulerFrag</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

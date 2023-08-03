@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="Generic Scheduler" id="d1">
+            <af:form id="f1">
+            <af:pageTemplate viewId="/Templates/GenericPageTemplate.jspx" id="pt1" value="#{bindings.ptb1}">
+                <f:facet name="pageContents">
+                <af:panelGridLayout id="pgl1">
+                    <af:gridRow height="100%" id="gr1">
+                        <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                            <!-- Content -->
+                            <af:region value="#{bindings.SchedulerBTF1.regionModel}" id="r1"/>
+                        </af:gridCell>
+                    </af:gridRow>
+                </af:panelGridLayout>
+                </f:facet>
+                </af:pageTemplate>
+                <af:resource type="css" source="/skins/css/bootstrap.css">skins/css/custom.css</af:resource>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

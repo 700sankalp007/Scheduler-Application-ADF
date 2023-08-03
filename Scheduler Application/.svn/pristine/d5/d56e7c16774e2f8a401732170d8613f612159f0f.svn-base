@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['sc.common.view.ViewControllerBundle']}"/>
+    <af:pageTemplate viewId="/Templates/GenericFragmentTemplate.jspx" value="#{bindings.ptb1}" id="pt1">
+        <f:facet name="pageContents">
+            <af:panelGroupLayout id="pgl1" layout="vertical">
+                <af:panelCollection id="pc1" styleClass="AFStretchWidth" featuresOff="viewMenu detach">
+                    <af:table value="#{bindings.SchedulerSetupEOVO1.collectionModel}" var="row"
+                              rows="#{bindings.SchedulerSetupEOVO1.rangeSize}"
+                              emptyText="#{bindings.SchedulerSetupEOVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.SchedulerSetupEOVO1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.SchedulerSetupEOVO1.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="10" id="t1" filterVisible="true"
+                              filterModel="#{bindings.SchedulerSetupEOVO1Query.queryDescriptor}"
+                              queryListener="#{bindings.SchedulerSetupEOVO1Query.processQuery}" varStatus="vs" width="100%"
+                              scrollPolicy="page" columnStretching="column:c1">
+                        <af:column id="c8" align="center" width="50" headerText="Detail">
+                            <af:link id="l1" partialSubmit="true"
+                                     action="#{backingBeanScope.GeneralSetupBean.goToSetupDetail}" icon="/images/more.png"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.SchedulerSetupEOVO1.hints.ServiceName.label}" id="c1"
+                                   align="center" filterable="true"
+                                   sortProperty="#{bindings.SchedulerSetupEOVO1.hints.ServiceName.name}" width="180">
+                            <af:outputText value="#{row.ServiceName}"
+                                           shortDesc="#{bindings.SchedulerSetupEOVO1.hints.ServiceName.tooltip}"
+                                           id="ot1"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.SchedulerSetupEOVO1.hints.ServiceType.label}" id="c6"
+                                   width="180" sortProperty="#{bindings.SchedulerSetupEOVO1.hints.ServiceType.name}"
+                                   filterable="true">
+                            <af:outputText value="#{row.ServiceType}"
+                                           shortDesc="#{bindings.SchedulerSetupEOVO1.hints.ServiceType.tooltip}"
+                                           id="ot6"/>
+                        </af:column>
+                        <af:column headerText="#{bindings.SchedulerSetupEOVO1.hints.SchedulerType.label}" id="c2"
+                                   sortProperty="#{bindings.SchedulerSetupEOVO1.hints.SchedulerType.name}"
+                                   filterable="true">
+                            <af:selectOneChoice value="#{row.bindings.SchedulerType.inputValue}"
+                                                label="#{row.bindings.SchedulerType.label}"
+                                                required="#{bindings.SchedulerSetupEOVO1.hints.SchedulerType.mandatory}"
+                                                shortDesc="#{bindings.SchedulerSetupEOVO1.hints.SchedulerType.tooltip}"
+                                                readOnly="true" id="soc2">
+                                <f:selectItems value="#{row.bindings.SchedulerType.items}" id="si1"/>
+                                <f:validator binding="#{row.bindings.SchedulerType.validator}"/>
+                            </af:selectOneChoice>
+                        </af:column>
+                        <af:column headerText="#{bindings.SchedulerSetupEOVO1.hints.Hour.label}" id="c3" align="center"
+                                   sortProperty="#{bindings.SchedulerSetupEOVO1.hints.Hour.name}" filterable="false">
+                            <af:outputText value="#{row.Hour}"
+                                           shortDesc="#{bindings.SchedulerSetupEOVO1.hints.Hour.tooltip}" id="ot3">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.SchedulerSetupEOVO1.hints.Hour.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.SchedulerSetupEOVO1.hints.Minute.label}" id="c4"
+                                   align="center" sortProperty="#{bindings.SchedulerSetupEOVO1.hints.Minute.name}"
+                                   filterable="false">
+                            <af:outputText value="#{row.Minute}"
+                                           shortDesc="#{bindings.SchedulerSetupEOVO1.hints.Minute.tooltip}" id="ot4">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.SchedulerSetupEOVO1.hints.Minute.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.SchedulerSetupEOVO1.hints.Second.label}" id="c5"
+                                   align="center" sortProperty="#{bindings.SchedulerSetupEOVO1.hints.Second.name}"
+                                   filterable="false">
+                            <af:outputText value="#{row.Second}"
+                                           shortDesc="#{bindings.SchedulerSetupEOVO1.hints.Second.tooltip}" id="ot5">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.SchedulerSetupEOVO1.hints.Second.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.SchedulerSetupEOVO1.hints.IsParameterized.label}" id="c7"
+                                   align="center"
+                                   sortProperty="#{bindings.SchedulerSetupEOVO1.hints.IsParameterized.name}"
+                                   filterable="true" width="180">
+                            <af:selectOneChoice value="#{row.bindings.IsParameterized.inputValue}"
+                                                label="#{row.bindings.IsParameterized.label}"
+                                                required="#{bindings.SchedulerSetupEOVO1.hints.IsParameterized.mandatory}"
+                                                shortDesc="#{bindings.SchedulerSetupEOVO1.hints.IsParameterized.tooltip}"
+                                                readOnly="true" id="soc1">
+                                <f:selectItems value="#{row.bindings.IsParameterized.items}" id="si2"/>
+                                <f:validator binding="#{row.bindings.IsParameterized.validator}"/>
+                            </af:selectOneChoice>
+                        </af:column>
+                    </af:table>
+                    <f:facet name="secondaryToolbar">
+                        <af:toolbar id="t2">
+                            <af:button id="b1" text="#{viewcontrollerBundle.CREATE_NEW_SETUP}" icon="/images/add.png"
+                                       action="CREATE_NEW_SETUP"/>
+                        </af:toolbar>
+                    </f:facet>
+                </af:panelCollection>
+            </af:panelGroupLayout>
+        </f:facet>
+    </af:pageTemplate>
+</jsp:root>

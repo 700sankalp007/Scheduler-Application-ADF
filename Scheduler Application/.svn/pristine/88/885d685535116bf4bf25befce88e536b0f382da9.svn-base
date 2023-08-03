@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.12.24" id="DataBindings"
+             SeparateXMLFiles="false" Package="sc.common.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/Pages/SchedulerPG.jspx" usageId="sc_common_view_SchedulerPGPageDef"/>
+    <page path="/fragments/SchedulerFrag.jsff" usageId="sc_common_view_SchedulerFragPageDef"/>
+    <page path="/Templates/GenericPageTemplate.jspx" usageId="sc_common_view_GenricPageTemplatePageDef"/>
+    <page path="/Templates/GenericFragmentTemplate.jspx" usageId="sc_common_view_GenericFragmentTemplatePageDef"/>
+    <page path="/Pages/generalSetup/GeneralSetupPG.jspx" usageId="sc_common_view_GeneralSetupPGPageDef"/>
+    <page path="/fragments/generalSetup/GeneralSetupSearch.jsff" usageId="sc_common_view_GeneralSetupSearchPageDef"/>
+    <page path="/fragments/generalSetup/GeneralSetupDetail.jsff" usageId="sc_common_view_GeneralSetupDetailPageDef"/>
+    <page path="/WEB-INF/TaskFlows/generalSetup/GeneralSetupBTF.xml#GeneralSetupBTF@Commit"
+          usageId="sc_common_view_GeneralSetupBTF_GeneralSetupBTF_CommitPageDef"/>
+    <page path="/WEB-INF/TaskFlows/generalSetup/GeneralSetupBTF.xml#GeneralSetupBTF@Rollback"
+          usageId="sc_common_view_GeneralSetupBTF_GeneralSetupBTF_RollbackPageDef"/>
+    <page path="/WEB-INF/TaskFlows/generalSetup/GeneralSetupBTF.xml#GeneralSetupBTF@CreateInsertScheduler"
+          usageId="sc_common_view_GeneralSetupBTF_GeneralSetupBTF_CreateInsertPageDef"/>
+    <page path="/WEB-INF/TaskFlows/generalSetup/GeneralSetupBTF.xml#GeneralSetupBTF@CreateInsertReportHeader"
+          usageId="sc_common_view_GeneralSetupBTF_GeneralSetupBTF_CreateInsert1PageDef"/>
+    <page path="/WEB-INF/TaskFlows/SchedulerBTF.xml#SchedulerBTF@reFreshScheduler"
+          usageId="sc_common_view_SchedulerBTF_SchedulerBTF_reFreshSchedulerPageDef"/>
+    <page path="/WEB-INF/TaskFlows/generalSetup/GeneralSetupBTF.xml#GeneralSetupBTF@CreateInsertReportParam"
+          usageId="sc_common_view_GeneralSetupBTF_GeneralSetupBTF_CreateInsertPageDef1"/>
+    <page path="/WEB-INF/TaskFlows/generalSetup/GeneralSetupBTF.xml#GeneralSetupBTF@CreateInsertReportDataMapping"
+          usageId="sc_common_view_GeneralSetupBTF_GeneralSetupBTF_CreateInsertPageDef11"/>
+    <page path="/WEB-INF/TaskFlows/generalSetup/GeneralSetupBTF.xml#GeneralSetupBTF@CreateInsert"
+          usageId="sc_common_view_GeneralSetupBTF_GeneralSetupBTF_CreateInsertPageDef111"/>
+    <page path="/WEB-INF/TaskFlows/SchedulerBTF.xml#SchedulerBTF@reFreshRunHis"
+          usageId="sc_common_view_SchedulerBTF_SchedulerBTF_methodCall1PageDef"/>
+    <page path="/fragments/errorFG.jsff" usageId="sc_common_view_errorFGPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="sc_common_view_SchedulerPGPageDef" path="Pages.SchedulerPGPageDef"/>
+    <page id="sc_common_view_SchedulerFragPageDef" path="fragments.SchedulerFragPageDef"/>
+    <page id="sc_common_view_PageTemplatePageDef" path="sc.common.view.pageDefs.PageTemplatePageDef"/>
+    <page id="sc_common_view_FragmentTemplatePageDef" path="Templates.FragmentTemplatePageDef"/>
+    <page id="sc_common_view_SchedulersPageDef" path="Pages.SchedulersPageDef"/>
+    <page id="sc_common_view_GenricPageTemplatePageDef" path="sc.common.view.pageDefs.GenricPageTemplatePageDef"/>
+    <page id="sc_common_view_GenericFragmentTemplatePageDef" path="Templates.GenericFragmentTemplatePageDef"/>
+    <page id="sc_common_view_untitled1PageDef" path="fragments.untitled1PageDef"/>
+    <page id="sc_common_view_GeneralSetupPGPageDef" path="Pages.generalSetup.GeneralSetupPGPageDef"/>
+    <page id="sc_common_view_GeneralSetupSearchPageDef" path="fragments.generalSetup.GeneralSetupSearchPageDef"/>
+    <page id="sc_common_view_GeneralSetupDetailPageDef" path="fragments.generalSetup.GeneralSetupDetailPageDef"/>
+    <page id="sc_common_view_GeneralSetupBTF_GeneralSetupBTF_CreateInsertPageDef"
+          path="TaskFlows.generalSetup.GeneralSetupBTF_GeneralSetupBTF_CreateInsertPageDef"/>
+    <page id="sc_common_view_GeneralSetupBTF_GeneralSetupBTF_CommitPageDef"
+          path="TaskFlows.generalSetup.GeneralSetupBTF_GeneralSetupBTF_CommitPageDef"/>
+    <page id="sc_common_view_GeneralSetupBTF_GeneralSetupBTF_RollbackPageDef"
+          path="TaskFlows.generalSetup.GeneralSetupBTF_GeneralSetupBTF_RollbackPageDef"/>
+    <page id="sc_common_view_GeneralSetupBTF_GeneralSetupBTF_CreateInsert1PageDef"
+          path="TaskFlows.generalSetup.GeneralSetupBTF_GeneralSetupBTF_CreateInsert1PageDef"/>
+    <page id="sc_common_view_SchedulerBTF_SchedulerBTF_reFreshSchedulerPageDef"
+          path="TaskFlows.SchedulerBTF_SchedulerBTF_reFreshSchedulerPageDef"/>
+    <page id="sc_common_view_GeneralSetupBTF_GeneralSetupBTF_CreateInsertPageDef1"
+          path="TaskFlows.generalSetup.GeneralSetupBTF_GeneralSetupBTF_CreateInsertPageDef1"/>
+    <page id="sc_common_view_GeneralSetupBTF_GeneralSetupBTF_CreateInsertPageDef11"
+          path="TaskFlows.generalSetup.GeneralSetupBTF_GeneralSetupBTF_CreateInsertPageDef11"/>
+    <page id="sc_common_view_GeneralSetupBTF_GeneralSetupBTF_gotoDetailPageDef"
+          path="TaskFlows.generalSetup.GeneralSetupBTF_GeneralSetupBTF_gotoDetailPageDef"/>
+    <page id="sc_common_view_GeneralSetupBTF_GeneralSetupBTF_CreateInsertPageDef111"
+          path="TaskFlows.generalSetup.GeneralSetupBTF_GeneralSetupBTF_CreateInsertPageDef111"/>
+    <page id="sc_common_view_SchedulerBTF_SchedulerBTF_methodCall1PageDef"
+          path="TaskFlows.SchedulerBTF_SchedulerBTF_methodCall1PageDef"/>
+    <page id="sc_common_view_errorFGPageDef" path="fragments.errorFGPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="GenericSchedulerAMDataControl" Package="sc.common.model.service"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="GenericSchedulerAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

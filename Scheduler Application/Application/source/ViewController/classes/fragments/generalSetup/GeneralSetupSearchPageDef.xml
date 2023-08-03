@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="GeneralSetupSearchPageDef"
+                Package="fragments.generalSetup">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="Templates.GenericFragmentTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="SchedulerSetupEOVO1" RangeSize="10" DataControl="GenericSchedulerAMDataControl"
+              id="SchedulerSetupEOVO1Iterator"/>
+    <searchRegion Binds="SchedulerSetupEOVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="SchedulerSetupEOVO1Query"/>
+    <iterator id="ColumnNameLovVO1Iterator" Binds="ColumnNameLovVO1" DataControl="GenericSchedulerAMDataControl"
+              RangeSize="25"/>
+    <iterator id="ReportSetupHeaderEOVO1Iterator" Binds="ReportSetupHeaderEOVO1"
+              DataControl="GenericSchedulerAMDataControl" RangeSize="25"/>
+    <iterator id="ReportDataMappingEOVO1Iterator" Binds="ReportDataMappingEOVO1"
+              DataControl="GenericSchedulerAMDataControl" RangeSize="25"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="SchedulerSetupEOVO1Iterator" id="SchedulerSetupEOVO1">
+      <nodeDefinition DefName="sc.common.model.queries.SchedulerSetupEOVO" Name="SchedulerSetupEOVO10">
+        <AttrNames>
+          <Item Value="ServiceName"/>
+          <Item Value="ServiceType"/>
+          <Item Value="SchedulerType"/>
+          <Item Value="Hour"/>
+          <Item Value="Minute"/>
+          <Item Value="Second"/>
+          <Item Value="IsParameterized"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

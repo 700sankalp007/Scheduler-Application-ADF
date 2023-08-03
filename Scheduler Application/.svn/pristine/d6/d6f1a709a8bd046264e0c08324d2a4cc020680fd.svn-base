@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+Copyright (c) 2016, 2013, Oracle and/or its affiliates. All rights reserved.
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <af:pageTemplateDef var="attrs" id="pt1">
+        <af:xmlContent>
+            <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+                <display-name>Gen Page Tempalate</display-name>
+                <facet>
+                    <facet-name>globalNavigator</facet-name>
+                </facet>
+                <facet>
+                    <facet-name>globalHeaderMiddle</facet-name>
+                </facet>
+                <facet>
+                    <facet-name>globalHeaderEnd</facet-name>
+                </facet>
+                <facet>
+                    <facet-name>pageContents</facet-name>
+                </facet>
+                <facet>
+                    <facet-name>experimental</facet-name>
+                </facet>
+            </component>
+        </af:xmlContent>
+        <af:panelGridLayout id="pt_pgl1" dimensionsFrom="children" inlineStyle="opecity:0.2;">
+            <af:gridRow id="pt_gr1">
+                <af:gridCell id="pt_gc1" width="50%"/>
+                <af:gridCell id="pt_gc2">
+                    <af:panelGroupLayout id="pt_pgl2" layout="vertical" styleClass="application-container-width">
+                        <af:panelGridLayout id="pt_pgl3" styleClass="">
+                            <af:gridRow marginTop="5px" id="pt_gr2">
+                                <af:gridCell id="pt_gc5" halign="stretch" width="20%">
+                                    <af:panelGroupLayout id="pt_pgl5" layout="horizontal">
+                                        <af:panelGroupLayout id="pt_pgl13" layout="horizontal"
+                                                             inlineStyle="width: 85px !important;">
+                                            <!--<af:commandImageLink id="pt_cil2" 
+                                                                 disabled="true" 
+                                                                 rendered="true" icon="/images/logo.png"/>-->
+                                            <af:spacer height="35"/>
+                                        </af:panelGroupLayout>
+                                    </af:panelGroupLayout>
+                                    <af:facetRef facetName="globalHeaderEnd"/>
+                                </af:gridCell>
+                            </af:gridRow>
+                        </af:panelGridLayout>
+                        <af:spacer height="5"/>
+                        <af:facetRef facetName="pageContents"/>
+                    </af:panelGroupLayout>
+                </af:gridCell>
+                <af:gridCell id="pt_gc3" width="50%"/>
+            </af:gridRow>
+        </af:panelGridLayout>
+    </af:pageTemplateDef>
+</jsp:root>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:pageTemplate viewId="/Templates/GenericFragmentTemplate.jspx" value="#{bindings.ptb1}" id="pt1">
+        <f:facet name="pageContents">
+               <af:panelGroupLayout id="pgl1">
+                <af:dialog id="d1">
+                    <f:facet name="buttonBar"/>
+                    <af:outputFormatted value="#{pageFlowScope.errorMessage}" id="of1"/>
+                </af:dialog>
+            </af:panelGroupLayout>
+     
+        </f:facet>
+     
+    </af:pageTemplate>
+</ui:composition>

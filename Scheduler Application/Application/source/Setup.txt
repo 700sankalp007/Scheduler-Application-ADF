@@ -1,0 +1,3 @@
+Step 1: Checkout code from SVN
+Step 2: run the DB Script SC_DDL.sql[Already available in project code]
+Step 3: Deploy Application on server.

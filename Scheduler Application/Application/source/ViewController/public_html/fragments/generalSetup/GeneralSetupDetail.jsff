@@ -1,0 +1,406 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['sc.common.view.ViewControllerBundle']}"/>
+    <af:pageTemplate viewId="/Templates/GenericFragmentTemplate.jspx" value="#{bindings.ptb1}" id="pt1">
+        <f:facet name="pageContents">
+            <af:panelGroupLayout id="pgl1" layout="vertical">
+                <af:panelBox text="#{viewcontrollerBundle.SETUP_DETAIL}" id="pb1" showDisclosure="false">
+                    <f:facet name="toolbar">
+                        <af:toolbar id="t3">
+                            <af:button partialSubmit="true" text="#{viewcontrollerBundle.SAVE}" id="b2"
+                                       icon="/images/save.png" action="SAVE"/>
+                            <af:button partialSubmit="true" text="#{viewcontrollerBundle.CANCEL}" id="b3"
+                                       icon="/images/canel.png" action="CANCEL" immediate="true"/>
+                            <af:button partialSubmit="true" text="#{viewcontrollerBundle.BACK}" id="b1" action="BACK"
+                                       icon="/images/back.png" immediate="true"/>
+                        </af:toolbar>
+                    </f:facet>
+                    <af:panelGroupLayout id="pgl3" layout="horizontal">
+                        <af:panelGroupLayout id="pgl4" layout="scroll" halign="start">
+                            <af:panelFormLayout id="pfl1" rows="3" maxColumns="3" labelAlignment="start">
+                                <af:inputText autoSubmit="true" value="#{bindings.AppName.inputValue}"
+                                              label="Application Name" required="#{bindings.AppName.hints.mandatory}"
+                                              columns="20" maximumLength="#{bindings.AppName.hints.precision}"
+                                              shortDesc="Your Application Name which required to pass in URL" id="it6">
+                                    <f:validator binding="#{bindings.AppName.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.ServiceName.inputValue}"
+                                              label="#{bindings.ServiceName.hints.label}" required="true"
+                                              columns="#{bindings.ServiceName.hints.displayWidth}"
+                                              maximumLength="#{bindings.ServiceName.hints.precision}"
+                                              shortDesc="#{bindings.ServiceName.hints.tooltip}" id="it1"
+                                              autoSubmit="true"
+                                              valueChangeListener="#{backingBeanScope.GeneralSetupBean.generateServiceType}"
+                                              showRequired="true">
+                                    <f:validator binding="#{bindings.ServiceName.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.ServiceType.inputValue}"
+                                              label="#{bindings.ServiceType.hints.label}" required="true"
+                                              columns="#{bindings.ServiceType.hints.displayWidth}"
+                                              maximumLength="#{bindings.ServiceType.hints.precision}"
+                                              shortDesc="#{bindings.ServiceType.hints.tooltip}" id="it2" disabled="true"
+                                              partialTriggers="it1" autoSubmit="true" showRequired="true">
+                                    <f:validator binding="#{bindings.ServiceType.validator}"/>
+                                </af:inputText>
+                                <af:selectOneChoice value="#{bindings.Delimiter.inputValue}"
+                                                    label="#{bindings.Delimiter.label}" required="true"
+                                                    shortDesc="#{bindings.Delimiter.hints.tooltip}" id="soc9"
+                                                    contentStyle="margin-top: 6px !important;" autoSubmit="true"
+                                                    showRequired="true"
+                                                    disabled="#{bindings.ReportDataFormat.inputValue!='csv'}"
+                                                    rendered="false">
+                                    <f:selectItems value="#{bindings.Delimiter.items}" id="si9"/>
+                                    <f:validator binding="#{bindings.Delimiter.validator}"/>
+                                </af:selectOneChoice>
+                                <af:selectOneChoice value="#{bindings.IsParameterized.inputValue}"
+                                                    label="#{bindings.IsParameterized.label}" required="true"
+                                                    shortDesc="#{bindings.IsParameterized.hints.tooltip}" id="soc5"
+                                                    contentStyle="margin-top: 6px !important;" autoSubmit="true"
+                                                    showRequired="true">
+                                    <f:selectItems value="#{bindings.IsParameterized.items}" id="si5"/>
+                                    <f:validator binding="#{bindings.IsParameterized.validator}"/>
+                                </af:selectOneChoice>
+                                <af:selectOneChoice value="#{bindings.IsRefresh.inputValue}"
+                                                    label="#{bindings.IsRefresh.label}" required="true"
+                                                    shortDesc="#{bindings.IsRefresh.hints.tooltip}" id="soc8"
+                                                    disabled="#{bindings.ServiceType.inputValue=='CUTL_ITEM_STRUCTURE' or bindings.ServiceType.inputValue=='SINGLE_EPN_ITEM_STRUCTURE'}"
+                                                    contentStyle="margin-top: 6px !important;" autoSubmit="true"
+                                                    showRequired="true">
+                                    <f:selectItems value="#{bindings.IsRefresh.items}" id="si8"/>
+                                    <f:validator binding="#{bindings.IsRefresh.validator}"/>
+                                </af:selectOneChoice>
+                                <af:selectOneChoice value="#{bindings.ReportDataFormat.inputValue}"
+                                                    label="#{bindings.ReportDataFormat.label}" required="true"
+                                                    shortDesc="#{bindings.ReportDataFormat.hints.tooltip}" id="soc6"
+                                                    contentStyle="margin-top: 6px !important;" autoSubmit="true"
+                                                    showRequired="true">
+                                    <f:selectItems value="#{bindings.ReportDataFormat.items}" id="si6"/>
+                                    <f:validator binding="#{bindings.ReportDataFormat.validator}"/>
+                                </af:selectOneChoice>
+                                <af:inputListOfValues id="reportDataTableId"
+                                                      popupTitle="Search and Select: #{bindings.ReportDataTable.hints.label}"
+                                                      value="#{bindings.ReportDataTable.inputValue}"
+                                                      label="#{bindings.ReportDataTable.hints.label}"
+                                                      model="#{bindings.ReportDataTable.listOfValuesModel}"
+                                                      required="true"
+                                                      columns="#{bindings.ReportDataTable.hints.displayWidth}"
+                                                      shortDesc="#{bindings.ReportDataTable.hints.tooltip}"
+                                                      autoSubmit="true" showRequired="true"
+                                                      valueChangeListener="#{backingBeanScope.GeneralSetupBean.getTableColumnsList}">
+                                    <f:validator binding="#{bindings.ReportDataTable.validator}"/>
+                                </af:inputListOfValues>
+                                <af:selectOneChoice value="#{bindings.ReportDataLocale.inputValue}"
+                                                    label="#{bindings.ReportDataLocale.label}" required="true"
+                                                    shortDesc="#{bindings.ReportDataLocale.hints.tooltip}" id="soc7"
+                                                    contentStyle="margin-top: 6px !important;" autoSubmit="true"
+                                                    showRequired="true">
+                                    <f:selectItems value="#{bindings.ReportDataLocale.items}" id="si7"/>
+                                    <f:validator binding="#{bindings.ReportDataLocale.validator}"/>
+                                </af:selectOneChoice>
+                                <af:inputText value="#{bindings.ReportPath.inputValue}"
+                                              label="#{bindings.ReportPath.hints.label}" required="true"
+                                              columns="#{bindings.ReportPath.hints.displayWidth}"
+                                              maximumLength="#{bindings.ReportPath.hints.precision}"
+                                              shortDesc="#{bindings.ReportPath.hints.tooltip}" id="it3" rows="4"
+                                              autoSubmit="true" showRequired="true">
+                                    <f:validator binding="#{bindings.ReportPath.validator}"/>
+                                </af:inputText>
+                                <af:inputText autoSubmit="true" value="#{bindings.RootNode.inputValue}"
+                                              label="#{bindings.RootNode.hints.label}"
+                                              required="#{bindings.RootNode.hints.mandatory}"
+                                              columns="#{bindings.RootNode.hints.displayWidth}"
+                                              maximumLength="#{bindings.RootNode.hints.precision}"
+                                              shortDesc="#{bindings.RootNode.hints.tooltip}" id="it5"
+                                              disabled="#{bindings.ReportDataFormat.inputValue!='xml'}">
+                                    <f:validator binding="#{bindings.RootNode.validator}"/>
+                                </af:inputText>
+                                <af:inputDate value="#{bindings.SchedulerDate.inputValue}"
+                                              label="#{bindings.SchedulerDate.hints.label}"
+                                              required="#{bindings.SchedulerDate.hints.mandatory}"
+                                              columns="#{bindings.SchedulerDate.hints.displayWidth}"
+                                              shortDesc="#{bindings.SchedulerDate.hints.tooltip}" id="id1">
+                                    <f:validator binding="#{bindings.SchedulerDate.validator}"/>
+                                    <af:convertDateTime pattern="#{bindings.SchedulerDate.format}"/>
+                                </af:inputDate>
+                                <af:selectOneChoice value="#{bindings.SchedulerType.inputValue}"
+                                                    label="#{bindings.SchedulerType.label}" required="true"
+                                                    shortDesc="#{bindings.SchedulerType.hints.tooltip}" id="soc1"
+                                                    contentStyle="margin-top: 6px !important;" autoSubmit="true"
+                                                    showRequired="true">
+                                    <f:selectItems value="#{bindings.SchedulerType.items}" id="si1"/>
+                                    <f:validator binding="#{bindings.SchedulerType.validator}"/>
+                                </af:selectOneChoice>
+                                <af:panelGroupLayout id="pgl2" layout="horizontal" halign="center" valign="top">
+                                    <af:panelFormLayout id="pfl3" labelAlignment="top">
+                                        <af:selectOneChoice value="#{bindings.Hour.inputValue}" required="false"
+                                                            shortDesc="#{bindings.Hour.hints.tooltip}" id="soc2"
+                                                            label="#{bindings.Hour.label}" showRequired="false"
+                                                            autoSubmit="true">
+                                            <f:selectItems value="#{bindings.Hour.items}" id="si2"/>
+                                            <f:validator binding="#{bindings.Hour.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:panelFormLayout>
+                                    <af:panelFormLayout id="pfl5" labelAlignment="top">
+                                        <af:selectOneChoice value="#{bindings.Minute.inputValue}" required="false"
+                                                            shortDesc="#{bindings.Minute.hints.tooltip}" id="soc3"
+                                                            label="#{bindings.Minute.label}" showRequired="false"
+                                                            autoSubmit="true">
+                                            <f:selectItems value="#{bindings.Minute.items}" id="si3"/>
+                                            <f:validator binding="#{bindings.Minute.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:panelFormLayout>
+                                    <af:panelFormLayout id="pfl4" labelAlignment="top">
+                                        <af:selectOneChoice value="#{bindings.Second.inputValue}" required="false"
+                                                            shortDesc="#{bindings.Second.hints.tooltip}" id="soc4"
+                                                            label="#{bindings.Second.label}" showRequired="false"
+                                                            autoSubmit="true">
+                                            <f:selectItems value="#{bindings.Second.items}" id="si4"/>
+                                            <f:validator binding="#{bindings.Second.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:panelFormLayout>
+                                </af:panelGroupLayout>
+                            </af:panelFormLayout>
+                        </af:panelGroupLayout>
+                       
+<!--<af:panelGroupLayout id="pgl5" layout="horizontal" halign="center" valign="middle">
+                            <af:panelFormLayout id="pfl2" rows="1" maxColumns="3" labelAlignment="top"
+                                                inlineStyle="margin-left:2% !important;" fieldWidth="50"
+                                                labelWidth="50">
+                                <af:group id="g1">
+                                    <af:selectOneChoice value="#{bindings.Hour.inputValue}" required="false"
+                                                        shortDesc="#{bindings.Hour.hints.tooltip}" id="soc2"
+                                                        label="#{bindings.Hour.label}" showRequired="false"
+                                                        autoSubmit="true">
+                                        <f:selectItems value="#{bindings.Hour.items}" id="si2"/>
+                                        <f:validator binding="#{bindings.Hour.validator}"/>
+                                    </af:selectOneChoice>
+                                    <af:selectOneChoice value="#{bindings.Minute.inputValue}" required="false"
+                                                        shortDesc="#{bindings.Minute.hints.tooltip}" id="soc3"
+                                                        label="#{bindings.Minute.label}" showRequired="false"
+                                                        autoSubmit="true">
+                                        <f:selectItems value="#{bindings.Minute.items}" id="si3"/>
+                                        <f:validator binding="#{bindings.Minute.validator}"/>
+                                    </af:selectOneChoice>
+                                    <af:selectOneChoice value="#{bindings.Second.inputValue}" required="false"
+                                                        shortDesc="#{bindings.Second.hints.tooltip}" id="soc4"
+                                                        label="#{bindings.Second.label}" showRequired="false"
+                                                        autoSubmit="true">
+                                        <f:selectItems value="#{bindings.Second.items}" id="si4"/>
+                                        <f:validator binding="#{bindings.Second.validator}"/>
+                                    </af:selectOneChoice>
+                                </af:group>
+                            </af:panelFormLayout>
+                        </af:panelGroupLayout>-->
+                    </af:panelGroupLayout>
+                </af:panelBox>
+                <af:spacer width="10" height="10" id="s1"/>
+                <af:panelBox text="#{viewcontrollerBundle.REPORT_PARAMETERS}" id="pb2" partialTriggers="soc5"
+                             rendered="#{bindings.IsParameterized.inputValue=='Y'}" showDisclosure="false">
+                    <af:panelCollection id="pc1" styleClass="AFStretchWidth" featuresOff="viewMenu detach">
+                        <af:table value="#{bindings.ReportSetupDetailEOVO1.collectionModel}" var="row"
+                                  rows="#{bindings.ReportSetupDetailEOVO1.rangeSize}"
+                                  emptyText="#{bindings.ReportSetupDetailEOVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  rowBandingInterval="0" fetchSize="#{bindings.ReportSetupDetailEOVO1.rangeSize}"
+                                  id="t1"
+                                  selectedRowKeys="#{bindings.ReportSetupDetailEOVO1.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.ReportSetupDetailEOVO1.collectionModel.makeCurrent}"
+                                  rowSelection="single" columnStretching="column:c4" partialTriggers="::b4 b16">
+                            <af:column id="c112" align="center" width="100">
+                                <af:toolbar id="t16">
+                                    <af:button text="Remove" id="b16" icon="/images/delete.png"
+                                               actionListener="#{bindings.removeRowSetupDetailWithKey.execute}"
+                                               immediate="true" partialSubmit="true"/>
+                                </af:toolbar>
+                            </af:column>
+                            <af:column headerText="#{bindings.ReportSetupDetailEOVO1.hints.ParamName.label}" id="c1"
+                                       width="200" minimumWidth="12" align="center">
+                                <af:inputText autoSubmit="true" value="#{row.bindings.ParamName.inputValue}"
+                                              label="#{bindings.ReportSetupDetailEOVO1.hints.ParamName.label}"
+                                              required="#{bindings.ReportSetupDetailEOVO1.hints.ParamName.mandatory}"
+                                              columns="#{bindings.ReportSetupDetailEOVO1.hints.ParamName.displayWidth}"
+                                              maximumLength="#{bindings.ReportSetupDetailEOVO1.hints.ParamName.precision}"
+                                              shortDesc="#{bindings.ReportSetupDetailEOVO1.hints.ParamName.tooltip}"
+                                              id="it14">
+                                    <f:validator binding="#{row.bindings.ParamName.validator}"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column headerText="#{bindings.ReportSetupDetailEOVO1.hints.ParamSqlType.label}" id="c2"
+                                       width="150" align="center">
+                                <af:inputText autoSubmit="true" value="#{row.bindings.ParamSqlType.inputValue}"
+                                              label="#{bindings.ReportSetupDetailEOVO1.hints.ParamSqlType.label}"
+                                              required="#{bindings.ReportSetupDetailEOVO1.hints.ParamSqlType.mandatory}"
+                                              columns="#{bindings.ReportSetupDetailEOVO1.hints.ParamSqlType.displayWidth}"
+                                              maximumLength="#{bindings.ReportSetupDetailEOVO1.hints.ParamSqlType.precision}"
+                                              shortDesc="#{bindings.ReportSetupDetailEOVO1.hints.ParamSqlType.tooltip}"
+                                              id="it15">
+                                    <f:validator binding="#{row.bindings.ParamSqlType.validator}"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column headerText="#{bindings.ReportSetupDetailEOVO1.hints.DefualtVal.label}" id="c3"
+                                       width="200" align="center">
+                                <af:inputText autoSubmit="true" value="#{row.bindings.DefualtVal.inputValue}"
+                                              label="#{bindings.ReportSetupDetailEOVO1.hints.DefualtVal.label}"
+                                              required="#{bindings.ReportSetupDetailEOVO1.hints.DefualtVal.mandatory}"
+                                              columns="#{bindings.ReportSetupDetailEOVO1.hints.DefualtVal.displayWidth}"
+                                              maximumLength="#{bindings.ReportSetupDetailEOVO1.hints.DefualtVal.precision}"
+                                              shortDesc="#{bindings.ReportSetupDetailEOVO1.hints.DefualtVal.tooltip}"
+                                              id="it16">
+                                    <f:validator binding="#{row.bindings.DefualtVal.validator}"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column headerText="#{bindings.ReportSetupDetailEOVO1.hints.SqlStatement.label}" id="c4">
+                                <af:inputText autoSubmit="true" value="#{row.bindings.SqlStatement.inputValue}"
+                                              label="#{bindings.ReportSetupDetailEOVO1.hints.SqlStatement.label}"
+                                              required="#{bindings.ReportSetupDetailEOVO1.hints.SqlStatement.mandatory}"
+                                              columns="#{bindings.ReportSetupDetailEOVO1.hints.SqlStatement.displayWidth}"
+                                              maximumLength="#{bindings.ReportSetupDetailEOVO1.hints.SqlStatement.precision}"
+                                              shortDesc="#{bindings.ReportSetupDetailEOVO1.hints.SqlStatement.tooltip}"
+                                              id="it17" rows="3">
+                                    <f:validator binding="#{row.bindings.SqlStatement.validator}"/>
+                                </af:inputText>
+                            </af:column>
+                        </af:table>
+                        <f:facet name="secondaryToolbar">
+                            <af:toolbar id="t4">
+                                <af:button text="#{viewcontrollerBundle.ADD_NEW}" id="b4"
+                                           icon="#{bindings.IsParameterized.inputValue=='Y'?'/images/add.png':'/images/add_dis.png'}"
+                                           disabled="#{bindings.IsParameterized.inputValue=='N'}"
+                                           action="CREATE_REPORT_PARAM" immediate="true"/>
+                            </af:toolbar>
+                        </f:facet>
+                    </af:panelCollection>
+                </af:panelBox>
+                <af:spacer width="10" height="10" id="s2"/>
+                <af:panelBox text="#{viewcontrollerBundle.REPORT_DATA_MAPPING}" id="pb3" showDisclosure="false">
+                    <af:panelCollection id="pc2" styleClass="AFStretchWidth" featuresOff="viewMenu detach">
+                        <af:table binding="#{backingBeanScope.GeneralSetupBean.mappingTbl}"
+                                  value="#{bindings.ReportDataMappingEOVO1.collectionModel}" var="row"
+                                  rows="#{bindings.ReportDataMappingEOVO1.rangeSize}"
+                                  emptyText="#{bindings.ReportDataMappingEOVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  rowBandingInterval="0"
+                                  selectedRowKeys="#{bindings.ReportDataMappingEOVO1.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.ReportDataMappingEOVO1.collectionModel.makeCurrent}"
+                                  rowSelection="single" fetchSize="#{bindings.ReportDataMappingEOVO1.rangeSize}" id="t2"
+                                  columnStretching="column:c7" partialTriggers=":::reportDataTableId b6 ::b5 :::soc6">
+                            <af:column id="c12" align="center" width="100">
+                                <af:toolbar id="t6">
+                                    <af:button text="Remove" id="b6" icon="/images/delete.png"
+                                               actionListener="#{bindings.removeDataMappingRowWithKey.execute}"
+                                               partialSubmit="true" immediate="true"/>
+                                </af:toolbar>
+                            </af:column>
+                            <af:column headerText="#{bindings.ReportDataMappingEOVO1.hints.ReportColName.label}" id="c5"
+                                       width="200">
+                                <af:inputText autoSubmit="true" value="#{row.bindings.ReportColName.inputValue}"
+                                              label="#{bindings.ReportDataMappingEOVO1.hints.ReportColName.label}"
+                                              required="#{bindings.ReportDataMappingEOVO1.hints.ReportColName.mandatory}"
+                                              columns="#{bindings.ReportDataMappingEOVO1.hints.ReportColName.displayWidth}"
+                                              maximumLength="#{bindings.ReportDataMappingEOVO1.hints.ReportColName.precision}"
+                                              shortDesc="#{bindings.ReportDataMappingEOVO1.hints.ReportColName.tooltip}"
+                                              id="it18">
+                                    <f:validator binding="#{row.bindings.ReportColName.validator}"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column headerText="#{bindings.ReportDataMappingEOVO1.hints.ReportSeqName.label}" id="c6"
+                                       width="100" rendered="false">
+                                <af:inputText autoSubmit="true" value="#{row.bindings.ReportSeqName.inputValue}"
+                                              label="#{bindings.ReportDataMappingEOVO1.hints.ReportSeqName.label}"
+                                              required="#{bindings.ReportDataMappingEOVO1.hints.ReportSeqName.mandatory}"
+                                              columns="#{bindings.ReportDataMappingEOVO1.hints.ReportSeqName.displayWidth}"
+                                              maximumLength="#{bindings.ReportDataMappingEOVO1.hints.ReportSeqName.precision}"
+                                              shortDesc="#{bindings.ReportDataMappingEOVO1.hints.ReportSeqName.tooltip}"
+                                              id="it19" disabled="#{bindings.ReportDataFormat.inputValue!='csv'}">
+                                    <f:validator binding="#{row.bindings.ReportSeqName.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.ReportDataMappingEOVO1.hints.ReportSeqName.format}"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column headerText="#{bindings.ReportDataMappingEOVO1.hints.TableColName.label}" id="c7">
+                                    <af:inputListOfValues id="tableColNameId"
+                                                       popupTitle="Search and Select: #{bindings.ReportDataMappingEOVO1.hints.TableColName.label}"
+                                                      value="#{row.bindings.TableColName.inputValue}"
+                                                      model="#{row.bindings.TableColName.listOfValuesModel}"
+                                                      required="#{bindings.ReportDataMappingEOVO1.hints.TableColName.mandatory}"
+                                                      columns="#{bindings.ReportDataMappingEOVO1.hints.TableColName.displayWidth}"
+                                                      shortDesc="#{bindings.ReportDataMappingEOVO1.hints.TableColName.tooltip}">
+                                    <f:validator binding="#{row.bindings.TableColName.validator}"/>
+                                </af:inputListOfValues>
+                            </af:column>
+                            <af:column headerText="#{bindings.ReportDataMappingEOVO1.hints.IsSeq.label}" id="c11">
+                                <af:selectOneChoice value="#{row.bindings.IsSeq.inputValue}"
+                                                    label="#{row.bindings.IsSeq.label}"
+                                                    required="#{bindings.ReportDataMappingEOVO1.hints.IsSeq.mandatory}"
+                                                    shortDesc="#{bindings.ReportDataMappingEOVO1.hints.IsSeq.tooltip}"
+                                                    id="soc11" autoSubmit="true" immediate="true">
+                                    <f:selectItems value="#{row.bindings.IsSeq.items}" id="si11"/>
+                                    <f:validator binding="#{row.bindings.IsSeq.validator}"/>
+                                </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="#{bindings.ReportDataMappingEOVO1.hints.DefaultValue.label}" id="c8"
+                                       align="center" width="200">
+                                <af:inputListOfValues autoSubmit="true" id="defaultValueId"
+                                                      popupTitle="Search and Select: #{bindings.ReportDataMappingEOVO1.hints.DefaultValue.label}"
+                                                      value="#{row.bindings.DefaultValue.inputValue}"
+                                                      model="#{row.bindings.DefaultValue.listOfValuesModel}"
+                                                      required="false"
+                                                      columns="#{bindings.ReportDataMappingEOVO1.hints.DefaultValue.displayWidth}"
+                                                      shortDesc="#{bindings.ReportDataMappingEOVO1.hints.DefaultValue.tooltip}"
+                                                      rendered="#{row.IsSeq=='Y'}" partialTriggers="soc11"
+                                                      immediate="true">
+                                    <f:validator binding="#{row.bindings.DefaultValue.validator}"/>
+                                </af:inputListOfValues>
+                                <af:inputText autoSubmit="true" value="#{row.bindings.DefaultValue.inputValue}"
+                                              label="#{bindings.ReportDataMappingEOVO1.hints.DefaultValue.label}"
+                                              required="#{bindings.ReportDataMappingEOVO1.hints.DefaultValue.mandatory}"
+                                              columns="#{bindings.ReportDataMappingEOVO1.hints.DefaultValue.displayWidth}"
+                                              maximumLength="#{bindings.ReportDataMappingEOVO1.hints.DefaultValue.precision}"
+                                              shortDesc="#{bindings.ReportDataMappingEOVO1.hints.DefaultValue.tooltip}"
+                                              id="it4" rendered="#{row.IsSeq=='N' || row.IsSeq==null }"
+                                              partialTriggers="soc11">
+                                    <f:validator binding="#{row.bindings.DefaultValue.validator}"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column headerText="#{bindings.ReportDataMappingEOVO1.hints.PrimaryFlag.label}" id="c9"
+                                       width="50">
+                                <af:selectOneChoice autoSubmit="true" value="#{row.bindings.PrimaryFlag.inputValue}"
+                                                    label="#{row.bindings.PrimaryFlag.label}"
+                                                    required="#{bindings.ReportDataMappingEOVO1.hints.PrimaryFlag.mandatory}"
+                                                    shortDesc="#{bindings.ReportDataMappingEOVO1.hints.PrimaryFlag.tooltip}"
+                                                    id="soc10">
+                                    <f:selectItems value="#{row.bindings.PrimaryFlag.items}" id="si10"/>
+                                    <f:validator binding="#{row.bindings.PrimaryFlag.validator}"/>
+                                </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="#{bindings.ReportDataMappingEOVO1.hints.DateFormat.label}" id="c10"
+                                       width="200" align="center">
+                                <af:inputText autoSubmit="true" value="#{row.bindings.DateFormat.inputValue}"
+                                              label="#{bindings.ReportDataMappingEOVO1.hints.DateFormat.label}"
+                                              required="#{bindings.ReportDataMappingEOVO1.hints.DateFormat.mandatory}"
+                                              columns="#{bindings.ReportDataMappingEOVO1.hints.DateFormat.displayWidth}"
+                                              maximumLength="#{bindings.ReportDataMappingEOVO1.hints.DateFormat.precision}"
+                                              shortDesc="#{bindings.ReportDataMappingEOVO1.hints.DateFormat.tooltip}"
+                                              id="it23">
+                                    <f:validator binding="#{row.bindings.DateFormat.validator}"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column headerText="#{bindings.ReportDataMappingEOVO1.hints.ColumnDataType.label}"
+                                       id="c13">
+                                <af:outputText value="#{row.ColumnDataType}"
+                                               shortDesc="#{bindings.ReportDataMappingEOVO1.hints.ColumnDataType.tooltip}"
+                                               id="ot1" />
+                            </af:column>
+                        </af:table>
+                        <f:facet name="secondaryToolbar">
+                            <af:toolbar id="t5">
+                                <af:button text="#{viewcontrollerBundle.ADD_NEW}" id="b5" icon="/images/add.png"
+                                           action="#{backingBeanScope.GeneralSetupBean.createReportDataMapping}"
+                                           immediate="true"/>
+                            </af:toolbar>
+                        </f:facet>
+                    </af:panelCollection>
+                </af:panelBox>
+            </af:panelGroupLayout>
+        </f:facet>
+    </af:pageTemplate>
+</jsp:root>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="SchedulerFragPageDef"
+                Package="fragments">
+  <parameters/>
+  <executables>
+   
+    <variableIterator id="variables"/>
+    <iterator id="ReportSetupHeaderEOVO1Iterator" Binds="ReportSetupHeaderEOVO1"
+              DataControl="GenericSchedulerAMDataControl" RangeSize="25"/>
+    <iterator id="ReportSetupDetailEOVO1Iterator" Binds="ReportSetupDetailEOVO1"
+              DataControl="GenericSchedulerAMDataControl" RangeSize="25"/>
+    <iterator id="ReportDataMappingEOVO1Iterator" Binds="ReportDataMappingEOVO1"
+              DataControl="GenericSchedulerAMDataControl" RangeSize="25"/>
+    <iterator Binds="ReportRunHistoryEOVO1" RangeSize="10" DataControl="GenericSchedulerAMDataControl"
+              id="ReportRunHistoryEOVO1Iterator"/>
+    <iterator Binds="SchedulerSetupEOVO1" RangeSize="25" DataControl="GenericSchedulerAMDataControl"
+              id="SchedulerSetupEOVO1Iterator"/>
+    <page path="Templates.GenericFragmentTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="ExceptionLogVO1" RangeSize="25" DataControl="GenericSchedulerAMDataControl"
+              id="ExceptionLogVO1Iterator"/>
+  </executables>
+  <bindings>
+    <action id="Commit" DataControl="GenericSchedulerAMDataControl" RequiresUpdateModel="true"
+            Action="commitTransaction"/>
+    <action id="Rollback" DataControl="GenericSchedulerAMDataControl" RequiresUpdateModel="false"
+            Action="rollbackTransaction"/>
+    <action IterBinding="ReportRunHistoryEOVO1Iterator" id="CreateInsertRunHistory"
+            InstanceName="GenericSchedulerAMDataControl.ReportRunHistoryEOVO1"
+            DataControl="GenericSchedulerAMDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <tree IterBinding="SchedulerSetupEOVO1Iterator" id="SchedulerSetupEOVO1">
+      <nodeDefinition DefName="sc.common.model.queries.SchedulerSetupEOVO" Name="SchedulerSetupEOVO10">
+        <AttrNames>
+          <Item Value="ServiceName"/>
+          <Item Value="SchedulerType"/>
+          <Item Value="Hour"/>
+          <Item Value="Minute"/>
+          <Item Value="Second"/>
+          <Item Value="Status"/>
+          <Item Value="SchedulerId"/>
+          <Item Value="ScheduleFlag"/>
+          <Item Value="LastRunDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ReportRunHistoryEOVO1Iterator" id="ReportRunHistoryEOVO1">
+      <nodeDefinition DefName="sc.common.model.queries.ReportRunHistoryEOVO" Name="ReportRunHistoryEOVO10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="ServiceType"/>
+          <Item Value="RunType"/>
+          <Item Value="Status"/>
+          <Item Value="RecordProcessed"/>
+          <Item Value="StartTime"/>
+          <Item Value="EndTme"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list IterBinding="SchedulerSetupEOVO1Iterator" StaticList="false" Uses="LOV_Hour" id="Hour" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="SchedulerSetupEOVO1Iterator" StaticList="false" Uses="LOV_SchedulerType" id="SchedulerType"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SchedulerSetupEOVO1Iterator" StaticList="false" Uses="LOV_Minute" id="Minute"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SchedulerSetupEOVO1Iterator" StaticList="false" Uses="LOV_Second" id="Second"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="ExceptionLogVO1Iterator" id="ExceptionId">
+      <AttrNames>
+        <Item Value="ExceptionId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ExceptionLogVO1Iterator" id="BeanName">
+      <AttrNames>
+        <Item Value="BeanName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ExceptionLogVO1Iterator" id="MethodName">
+      <AttrNames>
+        <Item Value="MethodName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ExceptionLogVO1Iterator" id="ErrorMessage">
+      <AttrNames>
+        <Item Value="ErrorMessage"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ExceptionLogVO1Iterator" id="CreatedDatetime">
+      <AttrNames>
+        <Item Value="CreatedDatetime"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

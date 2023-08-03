@@ -1,0 +1,1012 @@
+SET DEFINE OFF;
+--SQL Statement which produced this data:
+--
+--  SELECT 
+--     ROWID, CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION
+--  FROM C##ZAMIL_TST.CB_CURRENCY_MASTER
+--
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Euro', 'EUR', 'Pan-European Currency');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Markka', 'FIM', 'Markka');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Fiji Dollar', 'FJD', 'Fiji Dollar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Falkland Islands Pound', 'FKP', 'Falkland Islands Pound');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('French Franc', 'FRF', 'French Franc');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Pound Sterling', 'GBP', 'Pound Sterling');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Georgian Coupon', 'GEK', 'Georgian Coupon');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Lari', 'GEL', 'Lari');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Ghana Cedi (old)', 'GHC', 'Ghana Cedi (old)');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Ghana Cedi', 'GHS', 'Ghana Cedi');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Gibraltar Pound', 'GIP', 'Gibraltar Pound');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Dalasi', 'GMD', 'Dalasi');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Guinea Franc', 'GNF', 'Guinea Franc');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Drachma', 'GRD', 'Drachma');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Quetzal', 'GTQ', 'Quetzal');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Guinea-Bissau Peso', 'GWP', 'Guinea-Bissau Peso');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Pa''anga', 'TOP', 'Pa''anga');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Timor Escudo', 'TPE', 'Timor Escudo');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Turkish Lira', 'TRL', 'Turkish Lira');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('New Turkish Lira', 'TRY', 'New Turkish Lira');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Trinidad and Tobago Dollar', 'TTD', 'Trinidad and Tobago Dollar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('New Taiwan Dollar', 'TWD', 'New Taiwan Dollar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Tanzanian Shilling', 'TZS', 'Tanzanian Shilling');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Hryvnia', 'UAH', 'Hryvnia');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Karbovanet', 'UAK', 'Karbovanet');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Uganda Shilling (Obsolete)', 'UGS', 'Uganda Shilling (Obsolete)');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Uganda Shilling', 'UGX', 'Uganda Shilling');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('US Dollar', 'USD', 'US Dollar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('US Dollar (next day)', 'USN', 'US Dollar (next day)');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('US Dollar (same day)', 'USS', 'US Dollar (same day)');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Uruguary Peso en Unidades Indexadas', 'UYI', 'Uruguary Peso en Unidades Indexadas');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Uruguayan Peso', 'UYP', 'Uruguayan Peso');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Peso Uruguayo', 'UYU', 'Peso Uruguayo');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE)
+ Values
+   ('Unidad Previsional', 'UYW');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Uzbekistan Sum', 'UZS', 'Uzbekistan Sum');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Bolivar', 'VEB', 'Bolivar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Bolivar Fuerte', 'VEF', 'Bolivar Fuerte');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE)
+ Values
+   ('Bolivar Soberano', 'VES');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Dong', 'VND', 'Dong');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Vatu', 'VUV', 'Vatu');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Tala', 'WST', 'Tala');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('CFA Franc BEAC', 'XAF', 'Banque des Etats de l''Afrique Centrale');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Silver', 'XAG', 'Silver');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Gold', 'XAU', 'Gold');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Bond Markets Unit European Unit of Account 17 (Obsolete)', 'XB5', 'Bond Markets Unit European Unit of Account 17 (E.U.A.-17) (Obsolete)');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Bond Markets Unit European Composite Unit (EURCO)', 'XBA', 'The Bond Markets Currency for European Composite Unit (EURCO)');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Bond Markets Unit European Monetary Unit (E.M.U.-6)', 'XBB', 'E.M.U.-6 is sometimes known as the European Currency Unit. Do not confuse with the settlement unit of the European Monetary Cooperation Fund (EMCF) which has the same name.');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Bond Markets Unit European Unit of Account 9 (E.U.A.-9)', 'XBC', 'The Bond Markets Currency for European Unit of Account 9 (E.U.A.-9)');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Bond Markets Unit European Unit of Account 17 (E.U.A.-17)', 'XBD', 'The Bond Markets Currency for European Unit of Account 17 (E.U.A.-17)');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('East Carribbean Dollar', 'XCD', 'East Carribbean Dollar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('SDR', 'XDR', 'International Monetary Fund (I.M.F.)');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('European Currency Unit (E.C.U.)', 'XEU', 'European Monetary Cooperation Fund (E.M.C.F.)');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Special settlement currencies - Gold-Franc', 'XFO', 'Special settlement currencies - Gold-Franc');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Andorran Peseta', 'ADP', 'Andorran Peseta');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('UAE Dirham', 'AED', 'UAE Dirham');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Afghani (old)', 'AFA', 'Afghani (old)');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Afghani', 'AFN', 'Afghani');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Lek', 'ALL', 'Lek');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Armenian Dram', 'AMD', 'Armenian Dram');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Netherlands Antillian Guilder', 'ANG', 'Netherlands Antillian Guilder');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Kwanza', 'AOA', 'Kwanza');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Kwanza (Obsolete)', 'AOK', 'Kwanza (Obsolete)');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('New Kwanza', 'AON', 'New Kwanza');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Austral', 'ARA', 'Austral');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Argentine Peso', 'ARS', 'Argentine Peso');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Schilling', 'ATS', 'Schilling');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Australian Dollar', 'AUD', 'Australian Dollar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Aruban Guilder', 'AWG', 'Aruban Guilder');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Azerbaijanian Manat (old)', 'AZM', 'Azerbaijanian Manat (old)');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Azerbaijanian Manat', 'AZN', 'Azerbaijanian Manat');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Convertible Marks', 'BAM', 'Convertible Marks');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Barbados Dollar', 'BBD', 'Barbados Dollar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Taka', 'BDT', 'Taka');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Belgian Franc', 'BEF', 'Belgian Franc');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Bulgarian Lev (Obsolete)', 'BGL', 'Lev');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Bulgarian Lev', 'BGN', 'Bulgarian Lev');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Bahraini Dinar', 'BHD', 'Bahraini Dinar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Burundi Franc', 'BIF', 'Burundi Franc');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE)
+ Values
+   ('Bermudian Dollar', 'BMD');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Brunei Dollar', 'BND', 'Brunei Dollar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Boliviano', 'BOB', 'Boliviano');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Mvdol', 'BOV', 'Mvdol');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Guyana Dollar', 'GYD', 'Guyana Dollar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Hong Kong Dollar', 'HKD', 'Hong Kong Dollar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Lempira', 'HNL', 'Lempira');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Croatian Dinar', 'HRD', 'Croatian Dinar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Croatian kuna', 'HRK', 'Croatian kuna');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Gourde', 'HTG', 'Gourde');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Forint', 'HUF', 'Forint');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Rupiah', 'IDR', 'Rupiah');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Irish Pound', 'IEP', 'Irish Pound');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('New Israeli Sheqel', 'ILS', 'New Israeli Sheqel');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Indian Rupee', 'INR', 'Indian Rupee');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Iraqi Dinar', 'IQD', 'Iraqi Dinar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Iranian Rial', 'IRR', 'Iranian Rial');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Iceland Krona', 'ISK', 'Iceland Krona');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Italian Lira', 'ITL', 'Italian Lira');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Jamaican Dollar', 'JMD', 'Jamaican Dollar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Jordanian Dinar', 'JOD', 'Jordanian Dinar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Yen', 'JPY', 'Japanese yen');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Kenyan Shilling', 'KES', 'Kenyan Shilling');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Som', 'KGS', 'Som');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Riel', 'KHR', 'Riel');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Comoro Franc', 'KMF', 'Comoro Franc');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('North Korean Won', 'KPW', 'North Korean Won');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Won', 'KRW', 'Won');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Kuwaiti Dinar', 'KWD', 'Kuwaiti Dinar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Cayman Islands Dollar', 'KYD', 'Cayman Islands Dollar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Tenge', 'KZT', 'Tenge');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Kip', 'LAK', 'Kip');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Lebanese Pound', 'LBP', 'Lebanese Pound');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Sri Lanka Rupee', 'LKR', 'Sri Lanka Rupee');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Liberian Dollar', 'LRD', 'Liberian Dollar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Loti', 'LSL', 'Loti');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Lithuanian Litas', 'LTL', 'Lithuanian Litas');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Convertible Franc', 'LUC', 'Convertible Franc');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Luxembourg Franc', 'LUF', 'Luxembourg Franc');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Financial Franc', 'LUL', 'Financial Franc');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Latvian Lats', 'LVL', 'Latvian Lats');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Latvian Ruble', 'LVR', 'Latvian Ruble');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Libyan Dinar', 'LYD', 'Libyan Dinar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Moroccan Dirham', 'MAD', 'Moroccan Dirham');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Moldovan Leu', 'MDL', 'Moldovan Leu');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Malagasy Ariary', 'MGA', 'Malagasy Ariary');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Malagasy Franc', 'MGF', 'Malagasy Franc');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Denar', 'MKD', 'Denar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Kyat', 'MMK', 'Kyat');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Tugrik', 'MNT', 'Tugrik');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Pataca', 'MOP', 'Pataca');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Ouguiya', 'MRO', 'Ouguiya');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Maltese Lira', 'MTL', 'Maltese Lira');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Mauritius Rupee', 'MUR', 'Mauritius Rupee');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Rufiyaa', 'MVR', 'Rufiyaa');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Kawacha', 'MWK', 'Kawacha');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Mexican Peso', 'MXN', 'Mexican Peso');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Mexican Peso (Obsolete)', 'MXP', 'Mexican Peso (Obsolete)');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Mexican Unidad de Inversion (UDI)', 'MXV', 'Mexican Unidad de Inversion (UDI)');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Cruzado', 'BRC', 'Cruzado');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Brazilian Real', 'BRL', 'Brazilian Real');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Bahamian Dollar', 'BSD', 'Bahamian Dollar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Ngultrum', 'BTN', 'Ngultrum');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Kyat (Obsolete)', 'BUK', 'Kyat');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Pula', 'BWP', 'Pula');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Belarusian Ruble (Withdrawn in 2000)', 'BYB', 'The currency of Belarus withdrawn in year 2000 and replaced with BYR');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Belarusian Ruble', 'BYN', 'The currency of Belarus');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Belarusian Ruble (Withdrawn in 2016)', 'BYR', 'The currency of Belarus withdrawn in year 2016 and replaced with BYN');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Belize Dollar', 'BZD', 'Belize Dollar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Canadian Dollar', 'CAD', 'Canadian Dollars');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Franc Congolais', 'CDF', 'Franc Congolais');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('WIR Euro', 'CHE', 'WIR Euro');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Swiss Franc', 'CHF', 'Swiss Franc');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('WIR Franc', 'CHW', 'WIR Franc');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Unidades de formento', 'CLF', 'Unidades de formento');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Chilean Peso', 'CLP', 'Chilean Peso');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Yuan Renminbi', 'CNY', 'Yuan Renminbi');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Colombian Peso', 'COP', 'Colombian Peso');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Unidad de Valor Real', 'COU', 'Unidad de Valor Real');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Costa Rican Colon', 'CRC', 'Costa Rican Colon');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Koruna', 'CSK', 'Koruna');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Cuban Peso', 'CUP', 'Cuban Peso');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Cape Verde Escudo', 'CVE', 'Cape Verde Escudo');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Cyprus Pound', 'CYP', 'Cyprus Pound');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Czech Koruna', 'CZK', 'Czech Koruna');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Deutsche Mark', 'DEM', 'Deutsche Mark');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Djibouti Franc', 'DJF', 'Djibouti Franc');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Danish Krone', 'DKK', 'Danish Krone');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Dominican Peso', 'DOP', 'Dominican Peso');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Algerian Dinar', 'DZD', 'Algerian Dinar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Sucre', 'ECS', 'Sucre');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Unidad de Valor Constante (UVC)', 'ECV', 'Unidad de Valor Constante (UVC)');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Kroon', 'EEK', 'Kroon');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Egyptian Pound', 'EGP', 'Egyptian Pound');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Nakfa', 'ERN', 'Nakfa');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Convertible Peseta Accounts', 'ESB', 'Convertible Peseta Accounts');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Spanish Peseta', 'ESP', 'Spanish Peseta');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Ethiopian Birr', 'ETB', 'Ethiopian Birr');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Special settlement currencies - UIC-Franc', 'XFU', 'Special settlement currencies - UIC-Franc');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('CFA Franc BCEAO', 'XOF', 'Banque Centrale des Etats de l''Afrique de l''Ouest');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Palladium', 'XPD', 'Palladium');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('CFP Franc', 'XPF', 'CFP Franc');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Platinum', 'XPT', 'Platinum');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Testing', 'XTS', 'Code specifically reserved for testing purposes');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('No currency', 'XXX', 'Code assigned for transactions where no currency is involved');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Yemeni Dinar', 'YDD', 'Yemeni Dinar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Yemeni Rial', 'YER', 'Yemeni Rial');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('New Yugoslavian Dinar', 'YUD', 'New Yugoslavian Dinar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Yugoslvian Dinar', 'YUM', 'Yugoslvian Dinar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Yugoslvian Dinar (Obsolete)', 'YUN', 'Yugoslvian Dinar (Obsolete)');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Financial Rand', 'ZAL', 'Financial Rand');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Rand', 'ZAR', 'Rand');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE)
+ Values
+   ('Zambian Kwacha (Obsolete)', 'ZMK');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE)
+ Values
+   ('Zambian Kwacha', 'ZMW');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('New Zaire', 'ZRN', 'New Zaire');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Zaire', 'ZRZ', 'Zaire');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Zimbabwe Dollar', 'ZWD', 'Zimbabwe Dollar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Malaysian Ringgit', 'MYR', 'Malaysian Ringgit');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Metical (old)', 'MZM', 'Metical (old)');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Metical', 'MZN', 'Metical');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Namibia Dollar', 'NAD', 'Namibia Dollar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Naira', 'NGN', 'Naira');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Cordoba', 'NIC', 'Cordoba');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Cordoba Oro', 'NIO', 'Cordoba Oro');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Netherlands Guilder', 'NLG', 'Netherlands Guilder');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Norwegian Krone', 'NOK', 'Norwegian Krone');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Nepalese Rupee', 'NPR', 'Nepalese Rupee');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('New Zealand Dollar', 'NZD', 'New Zealand Dollar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Rial Omani', 'OMR', 'Rial Omani');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Balboa', 'PAB', 'Balboa');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Inti', 'PEI', 'Inti');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Nuevo Sol', 'PEN', 'Nuevo Sol');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Kina', 'PGK', 'Kina');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Philippine Peso', 'PHP', 'Philippine Peso');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Pakistan Rupee', 'PKR', 'Pakistan Rupee');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Zloty', 'PLN', 'Zloty');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Zloty (Obsolete)', 'PLZ', 'Zloty (Obsolete)');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Portuguese Escudo', 'PTE', 'Portuguese Escudo');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Guarani', 'PYG', 'Guarani');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Qatari Rial', 'QAR', 'Qatari Rial');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Leu', 'ROL', 'Leu');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('New Romanian Leu', 'RON', 'New Romanian Leu');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Serbian Dinar', 'RSD', 'Serbian Dinar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Russian Ruble', 'RUB', 'Russian Ruble');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Russian Ruble (old)', 'RUR', 'Russian Ruble (old)');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Rwanda Franc', 'RWF', 'Rwanda Franc');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Saudi Riyal', 'SAR', 'Saudi Riyal');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Solomon Islands Dollar', 'SBD', 'Solomon Islands Dollar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Seychelles Rupee', 'SCR', 'Seychelles Rupee');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE)
+ Values
+   ('Sudanese Dinar', 'SDD');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE)
+ Values
+   ('Sudanese Pound', 'SDG');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE)
+ Values
+   ('Sudanese Pound (old)', 'SDP');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Swedish Krona', 'SEK', 'Swedish Krona');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Singapore Dollar', 'SGD', 'Singapore Dollar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Saint Helena Pound', 'SHP', 'Saint Helena Pound');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Tolar', 'SIT', 'Tolar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Slovak Koruna', 'SKK', 'Slovak Koruna');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Leone', 'SLL', 'Leone');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Somali Shilling', 'SOS', 'Somali Shilling');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Suriname Dollar', 'SRD', 'Suriname Dollar');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Suriname Guilder', 'SRG', 'Suriname Guilder');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE)
+ Values
+   ('South Sudanese Pound', 'SSP');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Statistical', 'STAT', 'Statistical');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Dobra', 'STD', 'Dobra');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Rouble', 'SUR', 'Rouble');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('El Salvador Colon', 'SVC', 'El Salvador Colon');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Syrian Pound', 'SYP', 'Syrian Pound');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Lilangeni', 'SZL', 'Lilangeni');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Baht', 'THB', 'Baht');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Tajik Ruble', 'TJR', 'Tajik Ruble');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Somoni', 'TJS', 'Somoni');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Manat', 'TMM', 'Manat');
+Insert into CB_CURRENCY_MASTER
+   (CURRENCY_NAME, CURRENCY_CODE, DESCRIPTION)
+ Values
+   ('Tunisian Dinar', 'TND', 'Tunisian Dinar');
+COMMIT;

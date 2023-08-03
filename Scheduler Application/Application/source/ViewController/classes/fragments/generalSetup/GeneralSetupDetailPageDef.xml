@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="GeneralSetupDetailPageDef"
+                Package="fragments.generalSetup">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <page path="Templates.GenericFragmentTemplatePageDef" id="ptb1" Refresh="ifNeeded"/>
+    <iterator Binds="ReportSetupDetailEOVO1" RangeSize="25" DataControl="GenericSchedulerAMDataControl"
+              id="ReportSetupDetailEOVO1Iterator"/>
+    <iterator Binds="ReportDataMappingEOVO1" RangeSize="25" DataControl="GenericSchedulerAMDataControl"
+              id="ReportDataMappingEOVO1Iterator"/>
+    <iterator Binds="SchedulerSetupEOVO1" RangeSize="25" DataControl="GenericSchedulerAMDataControl"
+              id="SchedulerSetupEOVO1Iterator"/>
+    <iterator Binds="ReportSetupHeaderEOVO1" RangeSize="25" DataControl="GenericSchedulerAMDataControl"
+              id="ReportSetupHeaderEOVO1Iterator"/>
+    <iterator id="ColumnNameLovVO1Iterator" Binds="ColumnNameLovVO1" DataControl="GenericSchedulerAMDataControl"
+              RangeSize="25"/>
+    <iterator id="SchedulerDateEOVO1Iterator" Binds="SchedulerDateEOVO1" DataControl="GenericSchedulerAMDataControl"
+              RangeSize="25"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ReportSetupDetailEOVO1Iterator" id="ReportSetupDetailEOVO1">
+      <nodeDefinition DefName="sc.common.model.queries.ReportSetupDetailEOVO" Name="ReportSetupDetailEOVO10">
+        <AttrNames>
+          <Item Value="ParamName"/>
+          <Item Value="ParamSqlType"/>
+          <Item Value="DefualtVal"/>
+          <Item Value="SqlStatement"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ReportDataMappingEOVO1Iterator" id="ReportDataMappingEOVO1">
+      <nodeDefinition DefName="sc.common.model.queries.ReportDataMappingEOVO" Name="ReportDataMappingEOVO10">
+        <AttrNames>
+          <Item Value="ReportColName"/>
+          <Item Value="ReportSeqName"/>
+          <Item Value="TableColName"/>
+          <Item Value="IsSeq"/>
+          <Item Value="DefaultValue"/>
+          <Item Value="PrimaryFlag"/>
+          <Item Value="DateFormat"/>
+          <Item Value="ColumnDataType"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="SchedulerSetupEOVO1Iterator" id="ServiceName">
+      <AttrNames>
+        <Item Value="ServiceName"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="SchedulerSetupEOVO1Iterator" StaticList="false" Uses="LOV_SchedulerType" id="SchedulerType"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SchedulerSetupEOVO1Iterator" StaticList="false" Uses="LOV_Hour" id="Hour" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="SchedulerSetupEOVO1Iterator" StaticList="false" Uses="LOV_Minute" id="Minute"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SchedulerSetupEOVO1Iterator" StaticList="false" Uses="LOV_Second" id="Second"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="SchedulerSetupEOVO1Iterator" id="ServiceType">
+      <AttrNames>
+        <Item Value="ServiceType"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="SchedulerSetupEOVO1Iterator" StaticList="false" Uses="LOV_IsParameterized" id="IsParameterized"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="ReportSetupHeaderEOVO1Iterator" id="ReportPath">
+      <AttrNames>
+        <Item Value="ReportPath"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues IterBinding="ReportSetupHeaderEOVO1Iterator" StaticList="false" Uses="LOV_ReportDataTable"
+                  id="ReportDataTable"/>
+    <list IterBinding="ReportSetupHeaderEOVO1Iterator" StaticList="false" Uses="LOV_ReportDataFormat"
+          id="ReportDataFormat" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="ReportSetupHeaderEOVO1Iterator" StaticList="false" Uses="LOV_ReportDataLocale"
+          id="ReportDataLocale" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="ReportSetupHeaderEOVO1Iterator" StaticList="false" Uses="LOV_IsRefresh" id="IsRefresh"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="ReportSetupHeaderEOVO1Iterator" StaticList="false" Uses="LOV_Delimiter" id="Delimiter"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="ReportDataMappingEOVO1Iterator" id="CreateInsertReportDataMapping"
+            InstanceName="GenericSchedulerAMDataControl.ReportDataMappingEOVO1"
+            DataControl="GenericSchedulerAMDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="ReportDataMappingEOVO1Iterator" id="removeDataMappingRowWithKey"
+            InstanceName="GenericSchedulerAMDataControl.ReportDataMappingEOVO1"
+            DataControl="GenericSchedulerAMDataControl" RequiresUpdateModel="false" Action="removeRowWithKey">
+      <NamedData NDName="rowKey" NDValue="#{row.rowKeyStr}" NDType="java.lang.String"/>
+    </action>
+    <action IterBinding="ReportSetupDetailEOVO1Iterator" id="removeRowSetupDetailWithKey"
+            InstanceName="GenericSchedulerAMDataControl.ReportSetupDetailEOVO1"
+            DataControl="GenericSchedulerAMDataControl" RequiresUpdateModel="false" Action="removeRowWithKey">
+      <NamedData NDName="rowKey" NDValue="#{row.rowKeyStr}" NDType="java.lang.String"/>
+    </action>
+    <attributeValues IterBinding="ReportSetupHeaderEOVO1Iterator" id="RootNode">
+      <AttrNames>
+        <Item Value="RootNode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SchedulerDateEOVO1Iterator" id="SchedulerDate">
+      <AttrNames>
+        <Item Value="SchedulerDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SchedulerSetupEOVO1Iterator" id="AppName">
+      <AttrNames>
+        <Item Value="AppName"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

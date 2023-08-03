@@ -1,0 +1,53 @@
+SET DEFINE OFF;
+--SQL Statement which produced this data:
+--
+--  SELECT 
+--     ROWID, CONTRACT_TYPE_ID, LINE_TYPE_ID, LINE_TYPE_NAME, 
+--     LINE_TYPE_DESCRIPTION, CONTRACT_TYPE_NAME, CONTRACT_TYPE_DESC, 
+--     CONTRACT_NUMBER
+--  FROM C##ZAMIL_TST.CB_CNTRT_TPYE_N_LINE_TYPE_MST
+--
+Insert into CB_CNTRT_TPYE_N_LINE_TYPE_MST
+   (CONTRACT_TYPE_ID, LINE_TYPE_ID, LINE_TYPE_NAME, LINE_TYPE_DESCRIPTION, CONTRACT_TYPE_NAME)
+ Values
+   ('300000004466910', '300000000235119', 'Item, project', 'Line representing the sale of an item that is executed with a project.', 'Test Contract Item');
+Insert into CB_CNTRT_TPYE_N_LINE_TYPE_MST
+   (CONTRACT_TYPE_ID, LINE_TYPE_ID, LINE_TYPE_NAME, LINE_TYPE_DESCRIPTION, CONTRACT_TYPE_NAME, CONTRACT_TYPE_DESC)
+ Values
+   ('300000002395519', '300000000235119', 'Item, project', 'Line representing the sale of an item that is executed with a project.', 'Zamil Projects Contract', 
+    'Zamil Projects Contract Type');
+Insert into CB_CNTRT_TPYE_N_LINE_TYPE_MST
+   (CONTRACT_TYPE_ID, LINE_TYPE_ID, LINE_TYPE_NAME, LINE_TYPE_DESCRIPTION, CONTRACT_TYPE_NAME, CONTRACT_TYPE_DESC)
+ Values
+   ('300000002395519', '300000006288843', 'Penalty', 'Penalty', 'Zamil Projects Contract', 
+    'Zamil Projects Contract Type');
+Insert into CB_CNTRT_TPYE_N_LINE_TYPE_MST
+   (CONTRACT_TYPE_ID, LINE_TYPE_ID, LINE_TYPE_NAME, LINE_TYPE_DESCRIPTION, CONTRACT_TYPE_NAME, CONTRACT_TYPE_DESC)
+ Values
+   ('300000002395519', '300000006288844', 'Addition', 'Addition', 'Zamil Projects Contract', 
+    'Zamil Projects Contract Type');
+Insert into CB_CNTRT_TPYE_N_LINE_TYPE_MST
+   (CONTRACT_TYPE_ID, LINE_TYPE_ID, LINE_TYPE_NAME, LINE_TYPE_DESCRIPTION, CONTRACT_TYPE_NAME, CONTRACT_TYPE_DESC)
+ Values
+   ('300000002395519', '300000002395517', 'Deduction', 'Line representing the deduction on contract', 'Zamil Projects Contract', 
+    'Zamil Projects Contract Type');
+Insert into CB_CNTRT_TPYE_N_LINE_TYPE_MST
+   (CONTRACT_TYPE_ID, LINE_TYPE_ID, LINE_TYPE_NAME, LINE_TYPE_DESCRIPTION, CONTRACT_TYPE_NAME, CONTRACT_TYPE_DESC)
+ Values
+   ('300000002395519', '300000002395514', 'Advance', 'Line responding the Advance on Contract', 'Zamil Projects Contract', 
+    'Zamil Projects Contract Type');
+Insert into CB_CNTRT_TPYE_N_LINE_TYPE_MST
+   (CONTRACT_TYPE_ID, LINE_TYPE_ID, LINE_TYPE_NAME, LINE_TYPE_DESCRIPTION, CONTRACT_TYPE_NAME, CONTRACT_TYPE_DESC)
+ Values
+   ('300000002395519', '300000002395515', 'Retention', 'Line representing the retention on the contract', 'Zamil Projects Contract', 
+    'Zamil Projects Contract Type');
+Insert into CB_CNTRT_TPYE_N_LINE_TYPE_MST
+   (CONTRACT_TYPE_ID, LINE_TYPE_ID, LINE_TYPE_NAME, LINE_TYPE_DESCRIPTION, CONTRACT_TYPE_NAME)
+ Values
+   ('300000004466910', '300000004183103', 'BOQ Line', 'BOQ Line', 'Test Contract Item');
+Insert into CB_CNTRT_TPYE_N_LINE_TYPE_MST
+   (CONTRACT_TYPE_ID, LINE_TYPE_ID, LINE_TYPE_NAME, LINE_TYPE_DESCRIPTION, CONTRACT_TYPE_NAME, CONTRACT_TYPE_DESC)
+ Values
+   ('300000002395519', '300000004183103', 'BOQ Line', 'BOQ Line', 'Zamil Projects Contract', 
+    'Zamil Projects Contract Type');
+COMMIT;

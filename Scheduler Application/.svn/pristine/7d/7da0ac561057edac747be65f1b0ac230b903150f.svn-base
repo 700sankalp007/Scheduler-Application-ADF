@@ -1,0 +1,73 @@
+SET DEFINE OFF;
+--SQL Statement which produced this data:
+--
+--  SELECT 
+--     ROWID, METHOD_TYPE, METHOD_NAME, BILL_METHOD_ID, 
+--     ENABLE
+--  FROM C##ZAMIL_TST.CB_REVENUE_INVOICE_MASTER
+--
+Insert into CB_REVENUE_INVOICE_MASTER
+   (METHOD_TYPE, METHOD_NAME, BILL_METHOD_ID)
+ Values
+   ('Revenue', 'Percent Complete Revenue', '1');
+Insert into CB_REVENUE_INVOICE_MASTER
+   (METHOD_TYPE, METHOD_NAME, BILL_METHOD_ID)
+ Values
+   ('Revenue', 'Percent Spent Revenue', '2');
+Insert into CB_REVENUE_INVOICE_MASTER
+   (METHOD_TYPE, METHOD_NAME, BILL_METHOD_ID)
+ Values
+   ('Revenue', 'As Incurred Revenue', '3');
+Insert into CB_REVENUE_INVOICE_MASTER
+   (METHOD_TYPE, METHOD_NAME, BILL_METHOD_ID)
+ Values
+   ('Revenue', 'As Billed Revenue', '4');
+Insert into CB_REVENUE_INVOICE_MASTER
+   (METHOD_TYPE, METHOD_NAME, BILL_METHOD_ID)
+ Values
+   ('Revenue', 'Amount Based Revenue', '5');
+Insert into CB_REVENUE_INVOICE_MASTER
+   (METHOD_TYPE, METHOD_NAME, BILL_METHOD_ID)
+ Values
+   ('Revenue', 'Bill Rate Revenue', '6');
+Insert into CB_REVENUE_INVOICE_MASTER
+   (METHOD_TYPE, METHOD_NAME, BILL_METHOD_ID)
+ Values
+   ('Revenue', 'Burden Schedule Revenue', '7');
+Insert into CB_REVENUE_INVOICE_MASTER
+   (METHOD_TYPE, METHOD_NAME, BILL_METHOD_ID)
+ Values
+   ('Revenue', 'Intercompany Transfer Revenue', '8');
+Insert into CB_REVENUE_INVOICE_MASTER
+   (METHOD_TYPE, METHOD_NAME, BILL_METHOD_ID)
+ Values
+   ('Revenue', 'Cost Reimbursable Revenue', '9');
+Insert into CB_REVENUE_INVOICE_MASTER
+   (METHOD_TYPE, METHOD_NAME, BILL_METHOD_ID)
+ Values
+   ('Invoice', 'Percent Complete Invoice', '10');
+Insert into CB_REVENUE_INVOICE_MASTER
+   (METHOD_TYPE, METHOD_NAME, BILL_METHOD_ID)
+ Values
+   ('Invoice', 'Percent Spent Invoice', '11');
+Insert into CB_REVENUE_INVOICE_MASTER
+   (METHOD_TYPE, METHOD_NAME, BILL_METHOD_ID)
+ Values
+   ('Invoice', 'Amount Based Invoice', '12');
+Insert into CB_REVENUE_INVOICE_MASTER
+   (METHOD_TYPE, METHOD_NAME, BILL_METHOD_ID)
+ Values
+   ('Invoice', 'Bill Rate Invoice', '13');
+Insert into CB_REVENUE_INVOICE_MASTER
+   (METHOD_TYPE, METHOD_NAME, BILL_METHOD_ID)
+ Values
+   ('Invoice', 'Burden Schedule Invoice', '14');
+Insert into CB_REVENUE_INVOICE_MASTER
+   (METHOD_TYPE, METHOD_NAME, BILL_METHOD_ID)
+ Values
+   ('Invoice', 'Intercompany Transfer Invoice', '15');
+Insert into CB_REVENUE_INVOICE_MASTER
+   (METHOD_TYPE, METHOD_NAME, BILL_METHOD_ID)
+ Values
+   ('Invoice', 'Cost Reimbursable Invoice', '16');
+COMMIT;

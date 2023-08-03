@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!---->
+<BC4JConfig xmlns="http://xmlns.oracle.com/bc4j/configuration" version="11.1">
+    <AppModuleConfigBag ApplicationName="sc.common.model.service.GenericSchedulerAM">
+        <AppModuleConfig name="GenericSchedulerAMLocal" jbo.project="sc.common.model.Model"
+                         ApplicationName="sc.common.model.service.GenericSchedulerAM" DeployPlatform="LOCAL">
+            <AM-Pooling jbo.doconnectionpooling="true"/>
+            <!--<Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="jdbc/ZIT1DS"/>-->
+            <!--<Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/BCCDBDS"/>-->
+            <!--<Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="jdbc/FinUatTestDS"/>-->
+            <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="jdbc/GenProdDS"/> <!-- ZAMIL PROD -->
+            <!--<Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="jdbc/GenP2TDS"/>--> <!-- ZAMIL outbound -->
+            <!--<Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/ZAMIL_P2T_FINALDS"/>-->
+            <!--<Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="jdbc/GenP2TDS"/> --><!-- ZAMIL outbound -->
+            <!--<Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="jdbc/GenP2TDS"/>-->
+              <!--<Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="AppDBDataSource"/>-->
+        
+            <Security AppModuleJndiName="sc.common.model.service.GenericSchedulerAM"/>
+        </AppModuleConfig>
+        <AppModuleConfig name="GenericSchedulerAMShared" jbo.project="sc.common.model.Model"
+                         ApplicationName="sc.common.model.service.GenericSchedulerAM" DeployPlatform="LOCAL">
+            <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+            <!--<Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="jdbc/ZIT1DS"/>-->
+            <!--<Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/BCCDBDS"/>-->
+            <!--<Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="jdbc/FinUatTestDS"/>-->
+            <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="jdbc/GenProdDS"/> <!-- ZAMIL PROD -->
+            <!--<Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="jdbc/GenP2TDS"/>--> <!-- ZAMIL outbound -->
+         <!--<Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/ZAMIL_P2T_FINALDS"/>-->
+            <!--<Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="jdbc/GenP2TDS"/>-->
+            <!--<Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="AppDBDataSource"/>-->
+        
+            
+            <Security AppModuleJndiName="sc.common.model.service.GenericSchedulerAM"/>
+        </AppModuleConfig>
+    </AppModuleConfigBag>
+</BC4JConfig>

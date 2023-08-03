@@ -1,0 +1,20 @@
+SET DEFINE OFF;
+--SQL Statement which produced this data:
+--
+--  SELECT 
+--     ROWID, NAME, FORMAT_TYPE
+--  FROM C##ZAMIL_TST.CB_FORMAT_MASTER
+--
+Insert into CB_FORMAT_MASTER
+   (NAME, FORMAT_TYPE)
+ Values
+   ('ZAMIL LABOR', 'LABOR');
+Insert into CB_FORMAT_MASTER
+   (NAME, FORMAT_TYPE)
+ Values
+   ('ZAMIL EVENT', 'EVENTS');
+Insert into CB_FORMAT_MASTER
+   (NAME, FORMAT_TYPE)
+ Values
+   ('ZAMIL NON LABOR', 'NON LABOR');
+COMMIT;

@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ReportSetupHeaderEOVO"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  RowClass="sc.common.model.queries.ReportSetupHeaderEOVORowImpl"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  SelectAllAttributes="false"
+  AccessMode="DEFAULT">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="TableListLovVO1"
+    ViewObjectName="sc.common.model.queries.lov.TableListLovVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="DataFormatLovVO1"
+    ViewObjectName="sc.common.model.queries.lov.DataFormatLovVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="DataLocaleLovVO1"
+    ViewObjectName="sc.common.model.queries.lov.DataLocaleLovVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="YesNoLovVO1"
+    ViewObjectName="sc.common.model.queries.lov.YesNoLovVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="DelimiterLovVO1"
+    ViewObjectName="sc.common.model.queries.lov.DelimiterLovVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ReportDataTable"
+    ListVOName="TableListLovVO1"
+    ComboRowCountHint="10"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ReportDataTable"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TableName"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TableName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Name="TableListLovVOCriteria"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ReportDataFormat"
+    ListVOName="DataFormatLovVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ReportDataFormat"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Code"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ReportDataLocale"
+    ListVOName="DataLocaleLovVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ReportDataLocale"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Code"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_IsRefresh"
+    ListVOName="YesNoLovVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="IsRefresh"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Code"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Delimiter"
+    ListVOName="DelimiterLovVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Delimiter"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Code"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="ReportSetupHeaderEO"
+    Entity="sc.common.model.entities.ReportSetupHeaderEO"/>
+  <ViewAttribute
+    Name="EiRepHeaderId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EiRepHeaderId"
+    EntityUsage="ReportSetupHeaderEO"
+    AliasName="EI_REP_HEADER_ID"/>
+ 
+  <ViewAttribute
+    Name="ReportPath"
+    PrecisionRule="true"
+    EntityAttrName="ReportPath"
+    EntityUsage="ReportSetupHeaderEO"
+    AliasName="REPORT_PATH">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <LABEL
+          ResId="REPORT_PATH"/>
+        <AUTOSUBMIT
+          Value="true"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ReportDataTable"
+    PrecisionRule="true"
+    EntityAttrName="ReportDataTable"
+    EntityUsage="ReportSetupHeaderEO"
+    AliasName="REPORT_DATA_TABLE"
+    LOVName="LOV_ReportDataTable">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="TABLE_NAME"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ReportDataFormat"
+    PrecisionRule="true"
+    EntityAttrName="ReportDataFormat"
+    EntityUsage="ReportSetupHeaderEO"
+    AliasName="REPORT_DATA_FORMAT"
+    LOVName="LOV_ReportDataFormat">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="DATA_FORMAT"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <CONTROLTYPE
+          Value="choice"/>
+        <AUTOSUBMIT
+          Value="true"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ReportDataLocale"
+    PrecisionRule="true"
+    EntityAttrName="ReportDataLocale"
+    EntityUsage="ReportSetupHeaderEO"
+    AliasName="REPORT_DATA_LOCALE"
+    LOVName="LOV_ReportDataLocale">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <LABEL
+          ResId="DATA_LOCALE"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <AUTOSUBMIT
+          Value="true"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="ReportSetupHeaderEO"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="ReportSetupHeaderEO"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="ReportSetupHeaderEO"
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="ReportSetupHeaderEO"
+    AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="ServiceType"
+    PrecisionRule="true"
+    EntityAttrName="ServiceType"
+    EntityUsage="ReportSetupHeaderEO"
+    AliasName="SERVICE_TYPE"/>
+  <ViewAttribute
+    Name="IsRefresh"
+    PrecisionRule="true"
+    EntityAttrName="IsRefresh"
+    EntityUsage="ReportSetupHeaderEO"
+    AliasName="IS_REFRESH"
+    LOVName="LOV_IsRefresh">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <LABEL
+          ResId="IS_REFRESH"/>
+        <AUTOSUBMIT
+          Value="true"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Delimiter"
+    PrecisionRule="true"
+    EntityAttrName="Delimiter"
+    EntityUsage="ReportSetupHeaderEO"
+    AliasName="DELIMITER"
+    LOVName="LOV_Delimiter">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <LABEL
+          ResId="DELIMITER"/>
+        <AUTOSUBMIT
+          Value="true"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RootNode"
+    PrecisionRule="true"
+    EntityAttrName="RootNode"
+    EntityUsage="ReportSetupHeaderEO"
+    AliasName="ROOT_NODE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ROOT_NODE"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SchedulerId"
+    PrecisionRule="true"
+    EntityAttrName="SchedulerId"
+    EntityUsage="ReportSetupHeaderEO"
+    AliasName="SCHEDULER_ID"/>
+  <ViewAttribute
+    Name="EssJobName"
+    PrecisionRule="true"
+    EntityAttrName="EssJobName"
+    EntityUsage="ReportSetupHeaderEO"
+    AliasName="ESS_JOB_NAME"/>
+  <ViewLinkAccessor
+    Name="ReportSetupDetailEOVO"
+    ViewLink="sc.common.model.queries.viewLink.ReportSetupHeaderTodetailVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="ReportDataMappingEOVO"
+    ViewLink="sc.common.model.queries.viewLink.ReportSetupHeaderToDataMappingVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="sc.common.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

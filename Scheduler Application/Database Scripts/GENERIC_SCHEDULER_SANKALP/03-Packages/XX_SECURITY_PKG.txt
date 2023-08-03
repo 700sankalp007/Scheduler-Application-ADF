@@ -1,0 +1,83 @@
+create or replace PACKAGE "XX_SECURITY_PKG" 
+IS
+   PROCEDURE GET_SETUP_DETAILS (
+                                SETUP_TYPE_PARAM       IN     VARCHAR2,
+                                SETUP_SUB_TYPE_PARAM   IN     VARCHAR2,
+                                MODULE_PARAM           IN     VARCHAR2,
+                                HOST_PARAM                OUT VARCHAR2,
+                                PORT_PARAM                OUT VARCHAR2,
+                                USER_NAME_PARAM           OUT VARCHAR2,
+                                PASSWORD_PARAM            OUT VARCHAR2,
+                                OPERATION_PARAM           OUT VARCHAR2,
+                                SFTP_PATH_PARAM           OUT VARCHAR2,
+                                EMAIL_ADDRESS_PARAM           OUT VARCHAR2);
+END;
+------------------------
+create or replace PACKAGE BODY "XX_SECURITY_PKG" 
+IS
+   PROCEDURE GET_SETUP_DETAILS (SETUP_TYPE_PARAM       IN     VARCHAR2,
+                                SETUP_SUB_TYPE_PARAM   IN     VARCHAR2,
+                                MODULE_PARAM           IN     VARCHAR2,
+                                HOST_PARAM                OUT VARCHAR2,
+                                PORT_PARAM                OUT VARCHAR2,
+                                USER_NAME_PARAM           OUT VARCHAR2,
+                                PASSWORD_PARAM            OUT VARCHAR2,
+                                OPERATION_PARAM           OUT VARCHAR2,
+                                SFTP_PATH_PARAM           OUT VARCHAR2,
+                                EMAIL_ADDRESS_PARAM         OUT VARCHAR2)
+   AS
+   BEGIN
+      IF SETUP_SUB_TYPE_PARAM IS NOT NULL
+      THEN
+         SELECT HOST,
+                PORT,
+                USER_NAME,
+                PASSWORD,
+                OPERATION,
+                SFTP_PATH,
+                EMAIL_ADDRESS
+           INTO HOST_PARAM,
+                PORT_PARAM,
+                USER_NAME_PARAM,
+                PASSWORD_PARAM,
+                OPERATION_PARAM,
+                SFTP_PATH_PARAM,
+                EMAIL_ADDRESS_PARAM
+           FROM XX_PAAS_SETUP_DTL
+          WHERE SETUP_TYPE = SETUP_TYPE_PARAM
+                AND SUB_TYPE = SETUP_SUB_TYPE_PARAM
+                AND MODULE = MODULE_PARAM;
+      ELSE
+         SELECT HOST,
+                PORT,
+                USER_NAME,
+                PASSWORD,
+                OPERATION,
+                SFTP_PATH,
+                EMAIL_ADDRESS
+           INTO HOST_PARAM,
+                PORT_PARAM,
+                USER_NAME_PARAM,
+                PASSWORD_PARAM,
+                OPERATION_PARAM,
+                SFTP_PATH_PARAM,
+                EMAIL_ADDRESS_PARAM
+           FROM XX_PAAS_SETUP_DTL
+          WHERE SETUP_TYPE = SETUP_TYPE_PARAM AND MODULE = MODULE_PARAM;
+      END IF;
+   EXCEPTION
+      WHEN NO_DATA_FOUND
+      THEN
+         RAISE_APPLICATION_ERROR (
+            1001,
+            'Setup data does not exists for the type ' || SETUP_TYPE_PARAM);
+      WHEN OTHERS
+      THEN
+         raise_application_error (
+            -20001,
+               'An error was encountered - '
+            || SQLCODE
+            || ' -ERROR- '
+            || SQLERRM);
+   END;
+END;

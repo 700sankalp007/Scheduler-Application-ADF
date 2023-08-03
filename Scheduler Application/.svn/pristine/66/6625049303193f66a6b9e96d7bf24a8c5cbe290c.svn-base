@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle" value="#{adfBundle['sc.common.view.ViewControllerBundle']}"/>
+  <af:pageTemplate viewId="/Templates/GenericFragmentTemplate.jspx" id="pt1" value="#{bindings.ptb1}">
+        <f:facet name="pageContents">
+  <af:panelGroupLayout id="pgl1" layout="vertical" styleClass="AFStretchWidth">
+        <af:panelBox text="#{viewcontrollerBundle.SCHEDULERS}" id="pb2" showDisclosure="false">
+          <f:facet name="toolbar"/>
+          <af:panelCollection id="pc1" styleClass="AFStretchWidth" featuresOff="viewMenu detach">
+            <af:table value="#{bindings.SchedulerSetupEOVO1.collectionModel}" var="row"
+                      rows="#{bindings.SchedulerSetupEOVO1.rangeSize}"
+                      emptyText="#{bindings.SchedulerSetupEOVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0"
+                      selectedRowKeys="#{bindings.SchedulerSetupEOVO1.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.SchedulerSetupEOVO1.collectionModel.makeCurrent}"
+                      rowSelection="single" fetchSize="#{bindings.SchedulerSetupEOVO1.rangeSize}" id="t1"
+                      columnStretching="column:c1" partialTriggers="::t3">
+              <af:column headerText="#{bindings.SchedulerSetupEOVO1.hints.ServiceName.label}" id="c1">
+                <af:outputText value="#{row.ServiceName}"
+                               shortDesc="#{bindings.SchedulerSetupEOVO1.hints.ServiceName.tooltip}" id="ot1"/>
+              </af:column>
+              <af:column headerText="Last Run Date" id="c16" width="250">
+                <af:outputText value="#{row.LastRunDate}"
+                               shortDesc="#{bindings.SchedulerSetupEOVO1.hints.LastRunDate.tooltip}" id="ot11">
+                  <af:convertDateTime pattern="#{bindings.SchedulerSetupEOVO1.hints.LastRunDate.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.SchedulerSetupEOVO1.hints.Hour.label}" id="c3">
+                <af:outputText value="#{row.Hour}" shortDesc="#{bindings.SchedulerSetupEOVO1.hints.Hour.tooltip}"
+                               id="ot2">
+                  <af:convertNumber groupingUsed="false" pattern="#{bindings.SchedulerSetupEOVO1.hints.Hour.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.SchedulerSetupEOVO1.hints.Minute.label}" id="c4">
+                <af:outputText value="#{row.Minute}" shortDesc="#{bindings.SchedulerSetupEOVO1.hints.Minute.tooltip}"
+                               id="ot3">
+                  <af:convertNumber groupingUsed="false" pattern="#{bindings.SchedulerSetupEOVO1.hints.Minute.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.SchedulerSetupEOVO1.hints.Second.label}" id="c5">
+                <af:outputText value="#{row.Second}" shortDesc="#{bindings.SchedulerSetupEOVO1.hints.Second.tooltip}"
+                               id="ot4">
+                  <af:convertNumber groupingUsed="false" pattern="#{bindings.SchedulerSetupEOVO1.hints.Second.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.SchedulerSetupEOVO1.hints.SchedulerType.label}" id="c2">
+                <af:selectOneChoice value="#{row.bindings.SchedulerType.inputValue}"
+                                    label="#{row.bindings.SchedulerType.label}"
+                                    required="#{bindings.SchedulerSetupEOVO1.hints.SchedulerType.mandatory}"
+                                    shortDesc="#{bindings.SchedulerSetupEOVO1.hints.SchedulerType.tooltip}"
+                                    readOnly="true" id="soc1">
+                  <f:selectItems value="#{row.bindings.SchedulerType.items}" id="si1"/>
+                  <f:validator binding="#{row.bindings.SchedulerType.validator}"/>
+                </af:selectOneChoice>
+              </af:column>
+              <af:column headerText="#{bindings.SchedulerSetupEOVO1.hints.Status.label}" id="c6" align="center">
+                <af:outputText value="#{row.Status}" shortDesc="#{bindings.SchedulerSetupEOVO1.hints.Status.tooltip}"
+                               id="ot5"/>
+              </af:column>
+              <af:column id="c8" headerText="#{viewcontrollerBundle.AD_HOC_RUN}" align="center">
+                <af:link partialSubmit="true" id="l1" actionListener="#{backingBeanScope.GenericSchedulerBean.AdHocRun}"
+                         icon="/images/ad-hoc.png"/>
+              </af:column>
+              <af:column id="c08" headerText="Custom" align="center" rendered="#{pageFlowScope.custom=='Y'}">
+                <af:link partialSubmit="true" id="l01" actionListener="#{backingBeanScope.GenericSchedulerBean.customRun}"
+                         icon="/images/customized.png"/>
+              </af:column>
+              <af:column id="c9" headerText="#{viewcontrollerBundle.SCHEDULE}" align="center" partialTriggers=":::d1">
+                <af:link partialSubmit="true" id="l2" rendered="#{row.ScheduleFlag=='N'}"
+                         actionListener="#{backingBeanScope.GenericSchedulerBean.startScheduler}"
+                         icon="/images/Schedule.png"/>
+                 <af:link partialSubmit="true" id="Il2" rendered="#{row.ScheduleFlag=='Y'}"
+                         actionListener="#{backingBeanScope.GenericSchedulerBean.stopScheduler}"
+                         icon="/images/stopSch.png"/>
+               </af:column>
+            </af:table>
+            <f:facet name="secondaryToolbar">
+              <af:toolbar id="t3">
+                <af:link id="l3" action="referesh" icon="/images/refresh.png"/>
+              </af:toolbar>
+            </f:facet>
+          </af:panelCollection>
+        </af:panelBox>
+        <af:spacer width="10" height="10" id="s1"/>
+        <af:panelBox text="#{viewcontrollerBundle.RUN_HISTORY}" id="pb1" showDisclosure="false">
+          <f:facet name="toolbar"/>
+          <af:panelCollection id="pc2" styleClass="AFStretchWidth" featuresOff="viewMenu detach">
+            <af:table value="#{bindings.ReportRunHistoryEOVO1.collectionModel}" var="row"
+                      rows="#{bindings.ReportRunHistoryEOVO1.rangeSize}"
+                      emptyText="#{bindings.ReportRunHistoryEOVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0"
+                      selectedRowKeys="#{bindings.ReportRunHistoryEOVO1.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.ReportRunHistoryEOVO1.collectionModel.makeCurrent}"
+                      rowSelection="single" fetchSize="15" id="t2" columnStretching="column:c10" scrollPolicy="page"
+                      partialTriggers=":::pc1:t3">
+              <af:column id="c17" align="center" headerText="Error Detail">
+                <af:link icon="/images/more.png" id="l5"
+                         actionListener="#{backingBeanScope.GenericSchedulerBean.openErrorPopUp}"
+                         rendered="#{row.Status=='E'}">
+                  <af:showPopupBehavior popupId=":::p2"/>
+                </af:link>
+              </af:column>
+              <af:column headerText="#{bindings.ReportRunHistoryEOVO1.hints.Id.label}" id="c7" width="200"
+                         sortProperty="#{bindings.ReportRunHistoryEOVO1.hints.Id.name}" sortable="true">
+                <af:outputText value="#{row.Id}" shortDesc="#{bindings.ReportRunHistoryEOVO1.hints.Id.tooltip}"
+                               id="ot6">
+                  <af:convertNumber groupingUsed="false" pattern="#{bindings.ReportRunHistoryEOVO1.hints.Id.format}"/>
+                 </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.ReportRunHistoryEOVO1.hints.ServiceType.label}" id="c10"
+                         sortProperty="#{bindings.ReportRunHistoryEOVO1.hints.ServiceType.name}" sortable="true">
+                <af:selectOneChoice value="#{row.bindings.ServiceType.inputValue}"
+                                    label="#{row.bindings.ServiceType.label}"
+                                    required="#{bindings.ReportRunHistoryEOVO1.hints.ServiceType.mandatory}"
+                                    shortDesc="#{bindings.ReportRunHistoryEOVO1.hints.ServiceType.tooltip}"
+                                    readOnly="true" id="soc2">
+                  <f:selectItems value="#{row.bindings.ServiceType.items}" id="si2"/>
+                  <f:validator binding="#{row.bindings.ServiceType.validator}"/>
+                </af:selectOneChoice>
+              </af:column>
+              <af:column sortProperty="#{bindings.ReportRunHistoryEOVO1.hints.RunType.name}" sortable="true"
+                         headerText="#{bindings.ReportRunHistoryEOVO1.hints.RunType.label}" id="c15">
+                <af:outputText value="#{row.RunType}"
+                               shortDesc="#{bindings.ReportRunHistoryEOVO1.hints.RunType.tooltip}" id="ot10"/>
+              </af:column>
+              <af:column headerText="#{bindings.ReportRunHistoryEOVO1.hints.Status.label}" id="c11"
+                         sortProperty="#{bindings.ReportRunHistoryEOVO1.hints.Status.name}" sortable="true">
+                <af:selectOneChoice value="#{row.bindings.Status.inputValue}" label="#{row.bindings.Status.label}"
+                                    required="#{bindings.ReportRunHistoryEOVO1.hints.Status.mandatory}"
+                                    shortDesc="#{bindings.ReportRunHistoryEOVO1.hints.Status.tooltip}" readOnly="true"
+                                    id="soc3">
+                  <f:selectItems value="#{row.bindings.Status.items}" id="si3"/>
+                  <f:validator binding="#{row.bindings.Status.validator}"/>
+                </af:selectOneChoice>
+              </af:column>
+              <af:column headerText="#{bindings.ReportRunHistoryEOVO1.hints.RecordProcessed.label}" id="c12" width="50"
+                         sortProperty="#{bindings.ReportRunHistoryEOVO1.hints.RecordProcessed.name}" sortable="true"
+                         align="center">
+                <af:outputText value="#{row.RecordProcessed}"
+                               shortDesc="#{bindings.ReportRunHistoryEOVO1.hints.RecordProcessed.tooltip}" id="ot7"/>
+              </af:column>
+              <af:column headerText="#{bindings.ReportRunHistoryEOVO1.hints.StartTime.label}" id="c13" width="200"
+                         sortProperty="#{bindings.ReportRunHistoryEOVO1.hints.StartTime.name}" sortable="true">
+                <af:outputText value="#{row.StartTime}"
+                               shortDesc="#{bindings.ReportRunHistoryEOVO1.hints.StartTime.tooltip}" id="ot8">
+                  <af:convertDateTime pattern="#{bindings.ReportRunHistoryEOVO1.hints.StartTime.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.ReportRunHistoryEOVO1.hints.EndTme.label}" id="c14" width="200"
+                         sortProperty="#{bindings.ReportRunHistoryEOVO1.hints.EndTme.name}" sortable="true">
+                <af:outputText value="#{row.EndTme}" shortDesc="#{bindings.ReportRunHistoryEOVO1.hints.EndTme.tooltip}"
+                               id="ot9">
+                  <af:convertDateTime pattern="#{bindings.ReportRunHistoryEOVO1.hints.EndTme.format}"/>
+                </af:outputText>
+              </af:column>
+            </af:table>
+            <f:facet name="secondaryToolbar">
+              <af:toolbar id="t4">
+                <af:link id="l4" icon="/images/refresh.png" action="refresh2" />
+              </af:toolbar>
+            </f:facet>
+          </af:panelCollection>
+        </af:panelBox>
+        <af:popup childCreation="deferred" autoCancel="disabled" id="p1" contentDelivery="lazyUncached"
+                  binding="#{backingBeanScope.GenericSchedulerBean.schedulePopUp}">
+          <af:dialog id="d1" title="#{viewcontrollerBundle.SCHEDULE}" type="okCancel" closeIconVisible="false"
+                     dialogListener="#{backingBeanScope.GenericSchedulerBean.scheduleDailog}">
+            <af:panelGroupLayout id="pgl2" layout="vertical" valign="middle" halign="center">
+              <af:panelFormLayout id="pfl1" labelAlignment="start">
+                <af:selectOneChoice value="#{bindings.SchedulerType.inputValue}" label="#{bindings.SchedulerType.label}"
+                                    required="#{bindings.SchedulerType.hints.mandatory}"
+                                    shortDesc="#{bindings.SchedulerType.hints.tooltip}" id="soc5">
+                  <f:selectItems value="#{bindings.SchedulerType.items}" id="si5"/>
+                  <f:validator binding="#{bindings.SchedulerType.validator}"/>
+                </af:selectOneChoice>
+              </af:panelFormLayout>
+              <af:spacer width="10" height="10" id="s3"/>
+              <af:panelGroupLayout layout="horizontal" id="pgl4" inlineStyle="margin-left: -35px;"
+                                   valign="middle">
+                <af:panelFormLayout id="pfl3" labelAlignment="top">
+                  <f:facet name="footer"/>
+                  <af:selectOneChoice value="#{bindings.Hour.inputValue}" label="#{bindings.Hour.label}"
+                                      required="#{bindings.Hour.hints.mandatory}"
+                                      shortDesc="#{bindings.Hour.hints.tooltip}" id="soc4">
+                    <f:selectItems value="#{bindings.Hour.items}" id="si4"/>
+                    <f:validator binding="#{bindings.Hour.validator}"/>
+                  </af:selectOneChoice>
+                </af:panelFormLayout>
+                <af:panelFormLayout id="pfl4" labelAlignment="top">
+                  <f:facet name="footer"/>
+                  <af:selectOneChoice value="#{bindings.Minute.inputValue}" label="#{bindings.Minute.label}"
+                                      required="#{bindings.Minute.hints.mandatory}"
+                                      shortDesc="#{bindings.Minute.hints.tooltip}" id="soc6">
+                    <f:selectItems value="#{bindings.Minute.items}" id="si6"/>
+                    <f:validator binding="#{bindings.Minute.validator}"/>
+                  </af:selectOneChoice>
+                </af:panelFormLayout>
+                <af:panelFormLayout id="pfl2" labelAlignment="top">
+                  <af:selectOneChoice value="#{bindings.Second.inputValue}" label="#{bindings.Second.label}"
+                                      required="#{bindings.Second.hints.mandatory}"
+                                      shortDesc="#{bindings.Second.hints.tooltip}" id="soc7">
+                    <f:selectItems value="#{bindings.Second.items}" id="si7"/>
+                    <f:validator binding="#{bindings.Second.validator}"/>
+                  </af:selectOneChoice>
+                </af:panelFormLayout>
+              </af:panelGroupLayout>
+            </af:panelGroupLayout>
+          </af:dialog>
+        </af:popup>
+        <af:popup childCreation="deferred" autoCancel="disabled" id="p2">
+          <af:dialog id="d2" title="Exception Message" type="ok">
+            <f:facet name="buttonBar"/>
+            <af:panelGroupLayout id="pgl3">
+              <af:panelFormLayout id="pfl5">
+                <af:inputText value="#{bindings.ExceptionId.inputValue}" label="#{bindings.ExceptionId.hints.label}"
+                              required="#{bindings.ExceptionId.hints.mandatory}" readOnly="true"
+                              columns="#{bindings.ExceptionId.hints.displayWidth}"
+                              maximumLength="#{bindings.ExceptionId.hints.precision}"
+                              shortDesc="#{bindings.ExceptionId.hints.tooltip}" id="it1">
+                  <f:validator binding="#{bindings.ExceptionId.validator}"/>
+                  <af:convertNumber groupingUsed="false" pattern="#{bindings.ExceptionId.format}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.BeanName.inputValue}" label="#{bindings.BeanName.hints.label}"
+                              required="#{bindings.BeanName.hints.mandatory}" readOnly="true"
+                              columns="#{bindings.BeanName.hints.displayWidth}"
+                              maximumLength="#{bindings.BeanName.hints.precision}"
+                              shortDesc="#{bindings.BeanName.hints.tooltip}" id="it2">
+                  <f:validator binding="#{bindings.BeanName.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.MethodName.inputValue}" label="#{bindings.MethodName.hints.label}"
+                              required="#{bindings.MethodName.hints.mandatory}" readOnly="true"
+                              columns="#{bindings.MethodName.hints.displayWidth}"
+                              maximumLength="#{bindings.MethodName.hints.precision}"
+                              shortDesc="#{bindings.MethodName.hints.tooltip}" id="it3">
+                  <f:validator binding="#{bindings.MethodName.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.ErrorMessage.inputValue}" label="#{bindings.ErrorMessage.hints.label}"
+                              required="#{bindings.ErrorMessage.hints.mandatory}" readOnly="true"
+                              columns="#{bindings.ErrorMessage.hints.displayWidth}"
+                              maximumLength="#{bindings.ErrorMessage.hints.precision}"
+                              shortDesc="#{bindings.ErrorMessage.hints.tooltip}" id="it4">
+                  <f:validator binding="#{bindings.ErrorMessage.validator}"/>
+                </af:inputText>
+                <af:inputDate value="#{bindings.CreatedDatetime.inputValue}" readOnly="true"
+                              label="#{bindings.CreatedDatetime.hints.label}"
+                              required="#{bindings.CreatedDatetime.hints.mandatory}"
+                              columns="#{bindings.CreatedDatetime.hints.displayWidth}"
+                              shortDesc="#{bindings.CreatedDatetime.hints.tooltip}" id="id1">
+                  <f:validator binding="#{bindings.CreatedDatetime.validator}"/>
+                  <af:convertDateTime pattern="#{bindings.CreatedDatetime.format}"/>
+                </af:inputDate>
+              </af:panelFormLayout>
+            </af:panelGroupLayout>
+          </af:dialog>
+        </af:popup>
+      </af:panelGroupLayout>
+  </f:facet>
+  </af:pageTemplate>
+</jsp:root>

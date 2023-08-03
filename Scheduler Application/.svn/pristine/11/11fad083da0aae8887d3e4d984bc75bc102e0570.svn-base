@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Print Prod Report" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1547f43f-b80a-4788-9908-125e0c241556">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (6)"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TH" mode="Opaque" backcolor="#C47F7E">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 4_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 4_CH" mode="Opaque" backcolor="#E8FDFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Dataset1" uuid="78a72d9a-781c-489f-a0e6-cc1890c018ab">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (6)"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT 
+    REP_DTL.MANUFACTURING_ORG, 
+    REP_DTL.WORK_ORDER_NUMBER,              
+    REP_DTL.SALES_ORDER_NUM,
+    REP_DTL.TRANSFER_ORDER_NUMBER,
+    REP_DTL.PRODUCTION_EPN,
+    REP_DTL.MODEL_NUMBER, 
+    REP_DTL.MADE_TODAY,              
+    REP_DTL.SCHEDULED_QUANTITY,              
+    REP_DTL.PRINTED_QTY, 
+    REP_DTL.SCHEDULED_QUANTITY - REP_DTL.PRINTED_QTY AS BALANCE  
+FROM              
+    (SELECT              
+            SWODTL.WORK_ORDER_NUMBER,              
+            SWODTL.MODEL_NUMBER,              
+            SWODTL.SCHEDULED_QUANTITY,
+            SWODTL.PRODUCTION_EPN,
+            S.WO_OP_READY_QTY,              
+            SWODTL.LABEL_TYPE,       
+            SWODTL.PRODUCTION_LINE_NAME,    
+            L1.SERIAL_COUNT PRINTED_QTY,   
+            LABEL_PRINT_PKG.GET_TODAY_PRINTED_QTY(DTL.MANUFACTURING_ORG, SWODTL.WORK_ORDER_NUMBER, DTL.EPN_NUMBER, null, null,             
+            DTL.SPECIFICATION_NAME) MADE_TODAY,   
+            DTL.MANUFACTURING_ORG,
+            SO.SALES_ORDER_NUM,
+            SO.TRANSFER_ORDER_NUMBER
+             
+    FROM              
+        SODAR_WORK_ORDER_DTL SWODTL
+    JOIN 
+        LABEL_PRINT_GEN_SERIAL_DTL DTL  
+    ON   SWODTL.WORK_ORDER_ID = DTL.WORK_ORDER_ID              
+         
+    LEFT JOIN(SELECT SUM(SD.WO_OP_READY_QTY)WO_OP_READY_QTY,SD.WORK_ORDER_NUMBER FROM SODAR_WORK_ORDER_DTL SD GROUP BY SD.WORK_ORDER_NUMBER)S     
+    ON S.WORK_ORDER_NUMBER=DTL.WORK_ORDER_NUMBER  
+	    JOIN SODAR_INVENTORY_ORG_DTL SI
+	    ON SI.INVENTORY_ORG_CODE=DTL.MANUFACTURING_ORG
+        LEFT JOIN SODAR_SALES_ORDER_DTL SO
+        ON SWODTL.SALES_ORDER_NUMBER=SO.SALES_ORDER_NUM
+	    left join                          
+    (SELECT case when specification_name='AhuSpecification' then NVL(COUNT(DISTINCT L.SERIAL_NUMBER),0)-1                   
+            else NVL(COUNT(DISTINCT L.SERIAL_NUMBER),0)                  
+            end SERIAL_COUNT                  
+        ,L.work_order_id FROM LABEL_PRINT_GEN_SERIAL_DTL L                         
+        WHERE L.PRINTED ='Y'                           
+        group by L.work_order_id,specification_name)L1                          
+    ON l1.work_order_id=DTL.work_order_id                    
+        WHERE              
+               DTL.PRINTED = 'Y'
+            AND   SI.INVENTORY_ORG_ID=SWODTL.INVENTORY_ORG_ID
+            AND   TO_CHAR(DTL.CREATE_ON,'DD-MM-YYYY') = TO_CHAR(SYSDATE,'DD-MM-YYYY')    
+        GROUP BY             
+            SWODTL.WORK_ORDER_NUMBER,              
+            SWODTL.MODEL_NUMBER,              
+            SWODTL.SCHEDULED_QUANTITY,              
+            S.WO_OP_READY_QTY,              
+            SWODTL.LABEL_TYPE,   
+            SWODTL.PRODUCTION_EPN,
+            DTL.SPECIFICATION_NAME,     
+            SWODTL.PRODUCTION_LINE_NAME,    
+            DTL.MANUFACTURING_ORG, SWODTL.WORK_ORDER_NUMBER, DTL.EPN_NUMBER,             
+            DTL.SPECIFICATION_NAME,   
+            L1.SERIAL_COUNT,
+            SO.SALES_ORDER_NUM,
+            SO.TRANSFER_ORDER_NUMBER
+) REP_DTL WHERE REP_DTL.PRINTED_QTY>0]]>
+		</queryString>
+		<field name="MANUFACTURING_ORG" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="MANUFACTURING_ORG"/>
+			<property name="com.jaspersoft.studio.field.label" value="MANUFACTURING_ORG"/>
+		</field>
+		<field name="WORK_ORDER_NUMBER" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="WORK_ORDER_NUMBER"/>
+			<property name="com.jaspersoft.studio.field.label" value="WORK_ORDER_NUMBER"/>
+		</field>
+		<field name="PRODUCTION_EPN" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="PRODUCTION_EPN"/>
+			<property name="com.jaspersoft.studio.field.label" value="PRODUCTION_EPN"/>
+		</field>
+		<field name="MODEL_NUMBER" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="MODEL_NUMBER"/>
+			<property name="com.jaspersoft.studio.field.label" value="MODEL_NUMBER"/>
+		</field>
+		<field name="MADE_TODAY" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="MADE_TODAY"/>
+			<property name="com.jaspersoft.studio.field.label" value="MADE_TODAY"/>
+		</field>
+		<field name="SCHEDULED_QUANTITY" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="SCHEDULED_QUANTITY"/>
+			<property name="com.jaspersoft.studio.field.label" value="SCHEDULED_QUANTITY"/>
+		</field>
+		<field name="PRINTED_QTY" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="PRINTED_QTY"/>
+			<property name="com.jaspersoft.studio.field.label" value="PRINTED_QTY"/>
+		</field>
+		<field name="BALANCE" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="BALANCE"/>
+			<property name="com.jaspersoft.studio.field.label" value="BALANCE"/>
+		</field>
+		<group name="MANUFACTURING_ORG">
+			<groupExpression><![CDATA[$F{MANUFACTURING_ORG}]]></groupExpression>
+		</group>
+		<group name="WORK_ORDER_NUMBER">
+			<groupExpression><![CDATA[$F{WORK_ORDER_NUMBER}]]></groupExpression>
+		</group>
+		<group name="PRODUCTION_EPN">
+			<groupExpression><![CDATA[$F{PRODUCTION_EPN}]]></groupExpression>
+		</group>
+		<group name="MODEL_NUMBER">
+			<groupExpression><![CDATA[$F{MODEL_NUMBER}]]></groupExpression>
+		</group>
+		<group name="MADE_TODAY">
+			<groupExpression><![CDATA[$F{MADE_TODAY}]]></groupExpression>
+		</group>
+		<group name="SCHEDULED_QUANTITY">
+			<groupExpression><![CDATA[$F{SCHEDULED_QUANTITY}]]></groupExpression>
+		</group>
+		<group name="PRINTED_QTY">
+			<groupExpression><![CDATA[$F{PRINTED_QTY}]]></groupExpression>
+		</group>
+		<group name="BALANCE">
+			<groupExpression><![CDATA[$F{BALANCE}]]></groupExpression>
+		</group>
+	</subDataset>
+	<subDataset name="Dataset2" uuid="dd681f89-832e-440d-8e8e-eb6aa6070125">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (6)"/>
+		<parameter name="OrgCode" class="java.lang.String"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT 
+    REP_DTL.MANUFACTURING_ORG, 
+    REP_DTL.WORK_ORDER_NUMBER,              
+    REP_DTL.SALES_ORDER_NUM,
+    REP_DTL.TRANSFER_ORDER_NUMBER,
+    REP_DTL.PRODUCTION_EPN,
+    REP_DTL.MODEL_NUMBER, 
+    REP_DTL.MADE_TODAY,              
+    REP_DTL.SCHEDULED_QUANTITY,              
+    REP_DTL.PRINTED_QTY, 
+    REP_DTL.SCHEDULED_QUANTITY - REP_DTL.PRINTED_QTY AS BALANCE  
+FROM              
+    (SELECT              
+            SWODTL.WORK_ORDER_NUMBER,              
+            SWODTL.MODEL_NUMBER,              
+            SWODTL.SCHEDULED_QUANTITY,
+            SWODTL.PRODUCTION_EPN,
+            S.WO_OP_READY_QTY,              
+            SWODTL.LABEL_TYPE,       
+            SWODTL.PRODUCTION_LINE_NAME,    
+            L1.SERIAL_COUNT PRINTED_QTY,   
+            LABEL_PRINT_PKG.GET_TODAY_PRINTED_QTY(DTL.MANUFACTURING_ORG, SWODTL.WORK_ORDER_NUMBER, DTL.EPN_NUMBER, null, null,DTL.SPECIFICATION_NAME) MADE_TODAY,   
+            DTL.MANUFACTURING_ORG,
+            SWODTL.SALES_ORDER_NUMBER SALES_ORDER_NUM,
+            LABEL_PRINT_PKG.GET_TRANSFER_ORDER(SWODTL.SALES_ORDER_NUMBER)TRANSFER_ORDER_NUMBER
+          --   ''TRANSFER_ORDER_NUMBER
+    FROM              
+        SODAR_WORK_ORDER_DTL SWODTL
+    JOIN 
+        LABEL_PRINT_GEN_SERIAL_DTL DTL  
+    ON   SWODTL.WORK_ORDER_ID = DTL.WORK_ORDER_ID              
+         
+    LEFT JOIN(SELECT SUM(SD.WO_OP_READY_QTY)WO_OP_READY_QTY,SD.WORK_ORDER_NUMBER FROM SODAR_WORK_ORDER_DTL SD GROUP BY SD.WORK_ORDER_NUMBER)S     
+    ON S.WORK_ORDER_NUMBER=DTL.WORK_ORDER_NUMBER  
+	    JOIN SODAR_INVENTORY_ORG_DTL SI
+	    ON SI.INVENTORY_ORG_CODE=DTL.MANUFACTURING_ORG
+        left join                          
+    (SELECT case when specification_name='AhuSpecification' then NVL(COUNT(DISTINCT L.SERIAL_NUMBER),0)-1                   
+            else NVL(COUNT(DISTINCT L.SERIAL_NUMBER),0)                  
+            end SERIAL_COUNT                  
+        ,L.work_order_id FROM LABEL_PRINT_GEN_SERIAL_DTL L                         
+        WHERE L.PRINTED ='Y'                           
+        
+        group by L.work_order_id,specification_name)L1                          
+    ON l1.work_order_id=DTL.work_order_id                    
+        WHERE              
+               DTL.PRINTED = 'Y'
+            AND   SI.INVENTORY_ORG_ID=SWODTL.INVENTORY_ORG_ID
+           AND   TO_CHAR(DTL.CREATE_ON,'DD-MM-YYYY') = TO_CHAR(SYSDATE,'DD-MM-YYYY')    
+           AND  DTL.MANUFACTURING_ORG=$P{OrgCode}
+        GROUP BY             
+            SWODTL.WORK_ORDER_NUMBER,              
+            SWODTL.MODEL_NUMBER,              
+            SWODTL.SCHEDULED_QUANTITY,              
+            S.WO_OP_READY_QTY,              
+            SWODTL.LABEL_TYPE,   
+            SWODTL.PRODUCTION_EPN,
+            DTL.SPECIFICATION_NAME,     
+            SWODTL.PRODUCTION_LINE_NAME,    
+            DTL.MANUFACTURING_ORG, SWODTL.WORK_ORDER_NUMBER, DTL.EPN_NUMBER,             
+            DTL.SPECIFICATION_NAME,   
+            L1.SERIAL_COUNT,
+            SWODTL.SALES_ORDER_NUMBER
+) REP_DTL WHERE REP_DTL.PRINTED_QTY>0]]>
+		</queryString>
+		<field name="MANUFACTURING_ORG" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="MANUFACTURING_ORG"/>
+			<property name="com.jaspersoft.studio.field.label" value="MANUFACTURING_ORG"/>
+		</field>
+		<field name="WORK_ORDER_NUMBER" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="WORK_ORDER_NUMBER"/>
+			<property name="com.jaspersoft.studio.field.label" value="WORK_ORDER_NUMBER"/>
+		</field>
+		<field name="SALES_ORDER_NUM" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="SALES_ORDER_NUM"/>
+			<property name="com.jaspersoft.studio.field.label" value="SALES_ORDER_NUM"/>
+		</field>
+		<field name="TRANSFER_ORDER_NUMBER" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="TRANSFER_ORDER_NUMBER"/>
+			<property name="com.jaspersoft.studio.field.label" value="TRANSFER_ORDER_NUMBER"/>
+		</field>
+		<field name="PRODUCTION_EPN" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="PRODUCTION_EPN"/>
+			<property name="com.jaspersoft.studio.field.label" value="PRODUCTION_EPN"/>
+		</field>
+		<field name="MODEL_NUMBER" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="MODEL_NUMBER"/>
+			<property name="com.jaspersoft.studio.field.label" value="MODEL_NUMBER"/>
+		</field>
+		<field name="MADE_TODAY" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="MADE_TODAY"/>
+			<property name="com.jaspersoft.studio.field.label" value="MADE_TODAY"/>
+		</field>
+		<field name="SCHEDULED_QUANTITY" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="SCHEDULED_QUANTITY"/>
+			<property name="com.jaspersoft.studio.field.label" value="SCHEDULED_QUANTITY"/>
+		</field>
+		<field name="PRINTED_QTY" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="PRINTED_QTY"/>
+			<property name="com.jaspersoft.studio.field.label" value="PRINTED_QTY"/>
+		</field>
+		<field name="BALANCE" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="BALANCE"/>
+			<property name="com.jaspersoft.studio.field.label" value="BALANCE"/>
+		</field>
+		<variable name="sumOfToday" class="java.math.BigDecimal" resetType="Page" calculation="Sum">
+			<variableExpression><![CDATA[$F{MADE_TODAY}]]></variableExpression>
+			<initialValueExpression><![CDATA[0]]></initialValueExpression>
+		</variable>
+		<group name="MANUFACTURING_ORG">
+			<groupExpression><![CDATA[$F{MANUFACTURING_ORG}]]></groupExpression>
+		</group>
+		<group name="WORK_ORDER_NUMBER">
+			<groupExpression><![CDATA[$F{WORK_ORDER_NUMBER}]]></groupExpression>
+		</group>
+		<group name="SALES_ORDER_NUM">
+			<groupExpression><![CDATA[$F{SALES_ORDER_NUM}]]></groupExpression>
+		</group>
+		<group name="TRANSFER_ORDER_NUMBER">
+			<groupExpression><![CDATA[$F{TRANSFER_ORDER_NUMBER}]]></groupExpression>
+		</group>
+		<group name="PRODUCTION_EPN">
+			<groupExpression><![CDATA[$F{PRODUCTION_EPN}]]></groupExpression>
+		</group>
+		<group name="MODEL_NUMBER">
+			<groupExpression><![CDATA[$F{MODEL_NUMBER}]]></groupExpression>
+		</group>
+		<group name="MADE_TODAY">
+			<groupExpression><![CDATA[$F{MADE_TODAY}]]></groupExpression>
+		</group>
+		<group name="SCHEDULED_QUANTITY">
+			<groupExpression><![CDATA[$F{SCHEDULED_QUANTITY}]]></groupExpression>
+		</group>
+		<group name="PRINTED_QTY">
+			<groupExpression><![CDATA[$F{PRINTED_QTY}]]></groupExpression>
+		</group>
+		<group name="BALANCE">
+			<groupExpression><![CDATA[$F{BALANCE}]]></groupExpression>
+		</group>
+	</subDataset>
+	<parameter name="CONTEXT" class="java.lang.String"/>
+	<parameter name="OrgCode" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select '' from dual]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="82" splitType="Stretch">
+			<staticText>
+				<reportElement x="280" y="1" width="210" height="30" uuid="f4c601d7-6cee-4c37-9f9b-7d55b35b5be5"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Zamil Air Conditioners]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="294" y="23" width="186" height="20" uuid="0e312117-6db1-4157-8d99-62dc32a4cf14"/>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QC Daily Production Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="40" width="67" height="21" uuid="68e0b24b-070b-4ae7-9406-de89258da496"/>
+				<textElement textAlignment="Center">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CAC2]]></text>
+			</staticText>
+			<textField pattern="dd-MM-YYYY">
+				<reportElement x="90" y="50" width="100" height="20" uuid="5481f9cd-8d30-4924-b957-11bac275bfa1"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="50" width="100" height="20" uuid="a03fe31f-8687-4f89-86bb-29487fa060fd"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Production Date:]]></text>
+			</staticText>
+			<textField evaluationTime="Master">
+				<reportElement x="710" y="50" width="90" height="20" uuid="f5940bab-237b-4efe-8663-a720d1f2724d"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page " + $V{MASTER_CURRENT_PAGE} + " of " + $V{MASTER_TOTAL_PAGES}]]></textFieldExpression>
+			</textField>
+			<image onErrorType="Blank">
+				<reportElement x="0" y="1" width="200" height="39" uuid="6a7f3cc6-bcdb-43c1-943f-b958f0882f92"/>
+				<imageExpression><![CDATA[$P{CONTEXT}.concat( "//images//Zamil_Logo.png" )]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="230" splitType="Stretch">
+			<componentElement>
+				<reportElement x="0" y="0" width="810" height="190" uuid="03aa3e7e-f1d6-4aba-84d0-46a5192efa92">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.components.autoresize.next" value="true"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 4_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 4_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 4_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="Blank">
+					<datasetRun subDataset="Dataset2" uuid="7b41cb17-f75e-46fb-987d-b8c0ad17e7d8">
+						<datasetParameter name="OrgCode">
+							<datasetParameterExpression><![CDATA[$P{OrgCode}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="60" uuid="d0dd9216-f0c1-4982-901d-8c4ec6ffcac1">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:columnHeader style="Table 4_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="30" uuid="60cd2f24-db16-46f0-8ff7-770a736498b5"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[MFG Org]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 4_TD" height="30">
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+							</box>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 4_TD" height="30">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="60" height="30" uuid="201d410f-acd2-42b5-b6c8-de772c4f8850"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{MANUFACTURING_ORG}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="c8fd41ce-ae32-46c0-9510-606e84d3518e">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:columnHeader style="Table 4_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="70" height="30" uuid="08eff452-8438-412a-993c-28212be28492"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Work Order]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 4_TD" height="30">
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+							</box>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 4_TD" height="30">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="70" height="30" uuid="f4eda3d3-e9cf-4a31-a691-d68fc4ddd6d4"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{WORK_ORDER_NUMBER}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="5e91cd75-bc62-4b0a-bdaf-80694667a841">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:columnHeader style="Table 4_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="70" height="30" uuid="347517e4-5b9b-4c25-b707-c120f54b4c6a"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Sales Order]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 4_TD" height="30">
+							<box>
+								<pen lineColor="#FFFFFF"/>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+							</box>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 4_TD" height="30">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="70" height="30" uuid="5357d73a-405c-459b-83c1-259b680a6bf4"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{SALES_ORDER_NUM}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="3a9c5347-456d-41c3-9c8d-1c04b79542fd">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:columnHeader style="Table 4_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="70" height="30" uuid="f62a5401-ab17-42a5-bf8c-baf113a12be0"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Transfer 
+Order]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 4_TD" height="30">
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+							</box>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 4_TD" height="30">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="70" height="30" uuid="c2e63c9a-202d-42b4-81a9-65d81bc37d72"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{TRANSFER_ORDER_NUMBER}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="150" uuid="78bfa2e5-eead-4235-9b26-7eafca18bea3">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+						<jr:columnHeader style="Table 4_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="150" height="30" uuid="91007292-99c4-4420-a949-cbc33a3ae6ab"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[EPN]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 4_TD" height="30">
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+							</box>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 4_TD" height="30">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="150" height="30" uuid="b657fe86-606e-4a15-967e-431c486740e3"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{PRODUCTION_EPN}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="180" uuid="6f62dde0-6b40-460a-9050-76fb78832aca">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+						<jr:columnHeader style="Table 4_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="180" height="30" uuid="33cab2c3-b55e-4acc-b284-c06a74166c97"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Model Number]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 4_TD" height="30">
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#050505"/>
+							</box>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 4_TD" height="30">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="180" height="30" uuid="de3ca39b-f9d3-457e-a574-598858e3e5f7"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{MODEL_NUMBER}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="e7da62cc-7e83-44e3-bd56-37931e06d51c">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column7"/>
+						<jr:columnHeader style="Table 4_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="30" uuid="300623ad-0b4d-4476-9927-b284c3531065"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Credit Today]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 4_TD" height="30">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="60" height="30" uuid="57b9f5e2-6211-49a6-aa06-1bbda6a2ccbb"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{sumOfToday}]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 4_TD" height="30">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="60" height="30" uuid="f4ead563-e1a0-4ce8-9325-b5d6f246e627"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{MADE_TODAY}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="02da3270-7ab9-4591-82a4-e3d395afdafa">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column8"/>
+						<jr:columnHeader style="Table 4_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" uuid="0417c2cd-559e-425e-b584-13b948ce6ab4"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[SCHD Qty ]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 4_TD" height="30">
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+							</box>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 4_TD" height="30">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="40" height="30" uuid="af91b420-41d4-4813-9cfa-f64cbe4b5c91"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{SCHEDULED_QUANTITY}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="50" uuid="2d296edf-a1d6-427d-adf5-66bb2db7cb82">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column9"/>
+						<jr:columnHeader style="Table 4_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="50" height="30" uuid="d87b6be0-8639-4e0e-980a-1be956023445"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[PRDC Qty ]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 4_TD" height="30">
+							<box>
+								<pen lineColor="#FFFFFF"/>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+							</box>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 4_TD" height="30">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="50" height="30" uuid="5702d30e-7cd3-426e-af34-381206106a2c"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{PRINTED_QTY}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="50" uuid="e5fa2392-d611-478a-9dce-b6d52ddf461c">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column10"/>
+						<jr:columnHeader style="Table 4_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="50" height="30" uuid="1ae90cdb-9428-4d34-b158-03ee5400f8f5"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Balance]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 4_TD" height="30">
+							<box>
+								<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+							</box>
+						</jr:columnFooter>
+						<jr:detailCell style="Table 4_TD" height="30">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="50" height="30" uuid="1ae9fdd0-0ddb-491c-9ee5-a00c39746ac7"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{BALANCE}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>
